@@ -1,0 +1,17 @@
+Videos ayuda(?
+https://www.youtube.com/watch?v=LdBl0th_U_Q - DEJA DE HACER INTERFACES FEAS | JAVA SWING MATERIAL DESIGN
+https://www.youtube.com/watch?v=xGzeEUHcsj8 - Como Hacer una Interfaz Gráfica Profesional en JAVA con NetBeans
+https://www.youtube.com/watch?v=ni0vgzOs4to - Crear un PDF PLANTILLA con Java iText - Fácil y bien explicado
+https://www.youtube.com/watch?v=Dj1t53SH7nk - Enviar correo desde Java
+https://icon-icons.com/es/ - pagina de iconos.
+https://es.stackoverflow.com/questions/36666/por-qué-aparece-un-borde-en-el-botón-seleccionado
+https://www.befunky.com/es/crear/cambiar-tamanos-de-imagenes/ -  app web para cambiar tamaño imágenes.
+https://www.youtube.com/watch?v=eQMcIGVc8N0 - 🚀Como crear un Repositorio y Subir Proyecto a 👉GITHUB👈 Paso a Paso💻
+
+
+
+.color1 {color: #e7c53b;} rgb(231, 197, 59) Amarillo Fuerte	
+.color2 {color: #f1e876;} rgb[241, 232, 118] Amarillo claro
+.color3 {color: #271207;} rgb(39, 18, 7)
+.color4 {color: #847770;} rgb[132,119,112] marron claro
+.color5 {color: #f3eae8;} rgb[243,234,232] Marron Claro
