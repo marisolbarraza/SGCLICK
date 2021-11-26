@@ -42,10 +42,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         btn_nuevoCliente1 = new javax.swing.JButton();
         btn_verEquipos1 = new javax.swing.JButton();
-        btn_nuevoCliente2 = new javax.swing.JButton();
         lbl_reportes = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         btn_verReportes = new javax.swing.JButton();
+        btn_cerrarSesion = new javax.swing.JButton();
+        lbl_infoUsuario = new javax.swing.JLabel();
+        bgBienvenida1 = new javax.swing.JPanel();
+        lbl_bienvenida1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -163,19 +166,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btn_verEquipos1.setFocusable(false);
         backgroundMenu.add(btn_verEquipos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 240, 30));
 
-        btn_nuevoCliente2.setBackground(new java.awt.Color(132, 119, 112));
-        btn_nuevoCliente2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btn_nuevoCliente2.setForeground(new java.awt.Color(255, 255, 255));
-        btn_nuevoCliente2.setText("Ver reportes");
-        btn_nuevoCliente2.setBorder(null);
-        btn_nuevoCliente2.setFocusable(false);
-        btn_nuevoCliente2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_nuevoCliente2ActionPerformed(evt);
-            }
-        });
-        backgroundMenu.add(btn_nuevoCliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 240, 30));
-
         lbl_reportes.setBackground(new java.awt.Color(39, 18, 7));
         lbl_reportes.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         lbl_reportes.setForeground(new java.awt.Color(39, 18, 7));
@@ -200,7 +190,35 @@ public class VistaPrincipal extends javax.swing.JFrame {
         });
         backgroundMenu.add(btn_verReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 240, 30));
 
+        btn_cerrarSesion.setBackground(new java.awt.Color(255, 102, 102));
+        btn_cerrarSesion.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btn_cerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/IconcerrarSesion.png"))); // NOI18N
+        btn_cerrarSesion.setText("Cerrar Sesión");
+        btn_cerrarSesion.setBorder(null);
+        btn_cerrarSesion.setFocusable(false);
+        btn_cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cerrarSesionActionPerformed(evt);
+            }
+        });
+        backgroundMenu.add(btn_cerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 620, 150, 40));
+
         background.add(backgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 720));
+
+        lbl_infoUsuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lbl_infoUsuario.setText("Usuario: Nombre y apellido empleado - Rol: Administrador");
+        background.add(lbl_infoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, -1, -1));
+
+        bgBienvenida1.setBackground(new java.awt.Color(0, 0, 0));
+        bgBienvenida1.setForeground(new java.awt.Color(255, 255, 255));
+        bgBienvenida1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbl_bienvenida1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        lbl_bienvenida1.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_bienvenida1.setText("¡Bienvenido Nombre empleado!");
+        bgBienvenida1.add(lbl_bienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        background.add(bgBienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 830, 60));
 
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 720));
 
@@ -219,9 +237,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_nuevoCliente1ActionPerformed
 
-    private void btn_nuevoCliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoCliente2ActionPerformed
+    private void btn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarSesionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_nuevoCliente2ActionPerformed
+    }//GEN-LAST:event_btn_cerrarSesionActionPerformed
 
     private void btn_verReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verReportesActionPerformed
         // TODO add your handling code here:
@@ -265,10 +283,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JPanel backgroundMenu;
+    private javax.swing.JPanel bgBienvenida1;
+    private javax.swing.JButton btn_cerrarSesion;
     private javax.swing.JButton btn_consultarHistorial;
     private javax.swing.JButton btn_listarClientes;
     private javax.swing.JButton btn_nuevoCliente1;
-    private javax.swing.JButton btn_nuevoCliente2;
     private javax.swing.JButton btn_nuevoProyecto;
     private javax.swing.JButton btn_verEmpleados;
     private javax.swing.JButton btn_verEquipos1;
@@ -278,8 +297,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JLabel lbl_bienvenida1;
     private javax.swing.JLabel lbl_clientes;
     private javax.swing.JLabel lbl_equiposDesarrollo;
+    private javax.swing.JLabel lbl_infoUsuario;
     private javax.swing.JLabel lbl_proyectos;
     private javax.swing.JLabel lbl_reportes;
     // End of variables declaration//GEN-END:variables

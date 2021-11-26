@@ -1,6 +1,7 @@
 
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -11,14 +12,14 @@ public class Factura {
     private int nroFactura;
     private Date fechaEmisión;
     private double total;
-    private Historial historial;
+    private ArrayList<Detalle> detalles;
     private boolean visible;
 
-    public Factura(int nroFactura, Date fechaEmisión, double total, Historial historial, boolean visible) {
+    public Factura(int nroFactura, Date fechaEmisión, double total, ArrayList<Detalle> detalles, boolean visible) {
         this.nroFactura = nroFactura;
         this.fechaEmisión = fechaEmisión;
         this.total = total;
-        this.historial = historial;
+        this.detalles=detalles;
         this.visible = visible;
     }
 
@@ -46,13 +47,7 @@ public class Factura {
         this.total = total;
     }
 
-    public Historial getHistorial() {
-        return historial;
-    }
-
-    public void setHistorial(Historial historial) {
-        this.historial = historial;
-    }
+    
 
     public boolean isVisible() {
         return visible;
@@ -60,6 +55,14 @@ public class Factura {
 
     public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+    public ArrayList<Detalle> getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(ArrayList<Detalle> detalles) {
+        this.detalles = detalles;
     }
     
     
