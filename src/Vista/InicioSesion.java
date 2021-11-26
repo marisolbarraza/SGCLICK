@@ -56,6 +56,7 @@ public class InicioSesion extends javax.swing.JFrame {
         img_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo pequeño.png"))); // NOI18N
         background.add(img_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 69));
 
+        lbl_iniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
         lbl_iniciarSesion.setFont(new java.awt.Font("Roboto Black", 0, 20)); // NOI18N
         lbl_iniciarSesion.setText("INICIAR SESIÓN");
         background.add(lbl_iniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));

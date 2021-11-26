@@ -2,6 +2,7 @@ package sgclick;
 
 import Vista.InicioSesion;
 import Vista.RestablecerContraseña;
+import Vista.VistaPrincipal;
 
 /**
  *
@@ -13,7 +14,7 @@ public class SGCLICK {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        InicioSesion view = new InicioSesion();
+        VistaPrincipal view = new VistaPrincipal();
         view.setVisible(true);
         
     }
