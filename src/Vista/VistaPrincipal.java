@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author Marisol
@@ -14,7 +16,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
      * Creates new form VistaPrincipal
      */
     public VistaPrincipal() {
+        Bienvenida view = new Bienvenida();
         initComponents();
+        cambiarPanel(view);
         this.setLocationRelativeTo(null);
     }
 
@@ -27,7 +31,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background = new javax.swing.JPanel();
         backgroundMenu = new javax.swing.JPanel();
         lbl_clientes = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -46,18 +49,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         btn_verReportes = new javax.swing.JButton();
         btn_cerrarSesion = new javax.swing.JButton();
-        lbl_infoUsuario = new javax.swing.JLabel();
-        bgBienvenida1 = new javax.swing.JPanel();
-        lbl_bienvenida1 = new javax.swing.JLabel();
+        container = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        background.setBackground(new java.awt.Color(243, 234, 232));
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backgroundMenu.setBackground(new java.awt.Color(241, 232, 118));
         backgroundMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -132,6 +130,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btn_consultarHistorial.setText("Consultar Historial");
         btn_consultarHistorial.setBorder(null);
         btn_consultarHistorial.setFocusable(false);
+        btn_consultarHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarHistorialActionPerformed(evt);
+            }
+        });
         backgroundMenu.add(btn_consultarHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 240, 30));
 
         lbl_proyectos.setBackground(new java.awt.Color(39, 18, 7));
@@ -203,47 +206,47 @@ public class VistaPrincipal extends javax.swing.JFrame {
         });
         backgroundMenu.add(btn_cerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 620, 150, 40));
 
-        background.add(backgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 720));
+        getContentPane().add(backgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 720));
 
-        lbl_infoUsuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        lbl_infoUsuario.setText("Usuario: Nombre y apellido empleado - Rol: Administrador");
-        background.add(lbl_infoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, -1, -1));
-
-        bgBienvenida1.setBackground(new java.awt.Color(0, 0, 0));
-        bgBienvenida1.setForeground(new java.awt.Color(255, 255, 255));
-        bgBienvenida1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lbl_bienvenida1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        lbl_bienvenida1.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_bienvenida1.setText("¡Bienvenido Nombre empleado!");
-        bgBienvenida1.add(lbl_bienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        background.add(bgBienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 830, 60));
-
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 720));
+        container.setLayout(new java.awt.CardLayout());
+        getContentPane().add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 870, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_nuevoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoProyectoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_nuevoProyectoActionPerformed
-
-    private void btn_listarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarClientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_listarClientesActionPerformed
-
-    private void btn_nuevoCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoCliente1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_nuevoCliente1ActionPerformed
-
+    private void cambiarPanel(JPanel panelActual){
+        container.removeAll();
+        container.add(panelActual);
+        container.repaint();
+        container.revalidate();
+    }
+    
     private void btn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarSesionActionPerformed
-        // TODO add your handling code here:
+       InicioSesion view = new InicioSesion();
+       this.dispose();
+       view.setVisible(true);
     }//GEN-LAST:event_btn_cerrarSesionActionPerformed
 
     private void btn_verReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verReportesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_verReportesActionPerformed
+
+    private void btn_nuevoCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoCliente1ActionPerformed
+        NuevoCliente view = new NuevoCliente();
+        view.setVisible(true);
+    }//GEN-LAST:event_btn_nuevoCliente1ActionPerformed
+
+    private void btn_listarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_listarClientesActionPerformed
+
+    private void btn_nuevoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoProyectoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_nuevoProyectoActionPerformed
+
+    private void btn_consultarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarHistorialActionPerformed
+        HistorialCliente view = new HistorialCliente();
+        cambiarPanel(view);
+    }//GEN-LAST:event_btn_consultarHistorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,9 +284,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel background;
     private javax.swing.JPanel backgroundMenu;
-    private javax.swing.JPanel bgBienvenida1;
     private javax.swing.JButton btn_cerrarSesion;
     private javax.swing.JButton btn_consultarHistorial;
     private javax.swing.JButton btn_listarClientes;
@@ -293,14 +294,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btn_verEquipos1;
     private javax.swing.JButton btn_verProyectos;
     private javax.swing.JButton btn_verReportes;
+    private javax.swing.JPanel container;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JLabel lbl_bienvenida1;
     private javax.swing.JLabel lbl_clientes;
     private javax.swing.JLabel lbl_equiposDesarrollo;
-    private javax.swing.JLabel lbl_infoUsuario;
     private javax.swing.JLabel lbl_proyectos;
     private javax.swing.JLabel lbl_reportes;
     // End of variables declaration//GEN-END:variables

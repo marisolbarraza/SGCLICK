@@ -8,12 +8,12 @@ package Vista;
  *
  * @author Marisol
  */
-public class HistorialCLiente extends javax.swing.JPanel {
+public class ListarEmpleados extends javax.swing.JPanel {
 
     /**
-     * Creates new form HistorialCLiente
+     * Creates new form ListarEmpleados
      */
-    public HistorialCLiente() {
+    public ListarEmpleados() {
         initComponents();
     }
 
