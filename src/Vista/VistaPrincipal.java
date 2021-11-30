@@ -34,7 +34,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         backgroundMenu = new javax.swing.JPanel();
         lbl_clientes = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        btn_nuevoProyecto = new javax.swing.JButton();
         btn_verProyectos = new javax.swing.JButton();
         btn_listarClientes = new javax.swing.JButton();
         lbl_equiposDesarrollo = new javax.swing.JLabel();
@@ -71,26 +70,18 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(39, 18, 7));
         backgroundMenu.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 193, 17));
 
-        btn_nuevoProyecto.setBackground(new java.awt.Color(132, 119, 112));
-        btn_nuevoProyecto.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btn_nuevoProyecto.setForeground(new java.awt.Color(255, 255, 255));
-        btn_nuevoProyecto.setText("+Nuevo Proyecto");
-        btn_nuevoProyecto.setBorder(null);
-        btn_nuevoProyecto.setFocusable(false);
-        btn_nuevoProyecto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_nuevoProyectoActionPerformed(evt);
-            }
-        });
-        backgroundMenu.add(btn_nuevoProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 240, 30));
-
         btn_verProyectos.setBackground(new java.awt.Color(132, 119, 112));
         btn_verProyectos.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btn_verProyectos.setForeground(new java.awt.Color(255, 255, 255));
         btn_verProyectos.setText("Ver proyectos");
         btn_verProyectos.setBorder(null);
         btn_verProyectos.setFocusable(false);
-        backgroundMenu.add(btn_verProyectos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 240, 30));
+        btn_verProyectos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_verProyectosActionPerformed(evt);
+            }
+        });
+        backgroundMenu.add(btn_verProyectos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 240, 30));
 
         btn_listarClientes.setBackground(new java.awt.Color(132, 119, 112));
         btn_listarClientes.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -122,6 +113,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btn_verEmpleados.setText("Ver Empleados");
         btn_verEmpleados.setBorder(null);
         btn_verEmpleados.setFocusable(false);
+        btn_verEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_verEmpleadosActionPerformed(evt);
+            }
+        });
         backgroundMenu.add(btn_verEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 240, 30));
 
         btn_consultarHistorial.setBackground(new java.awt.Color(132, 119, 112));
@@ -167,6 +163,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btn_verEquipos1.setText("Ver Equipos");
         btn_verEquipos1.setBorder(null);
         btn_verEquipos1.setFocusable(false);
+        btn_verEquipos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_verEquipos1ActionPerformed(evt);
+            }
+        });
         backgroundMenu.add(btn_verEquipos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 240, 30));
 
         lbl_reportes.setBackground(new java.awt.Color(39, 18, 7));
@@ -174,11 +175,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         lbl_reportes.setForeground(new java.awt.Color(39, 18, 7));
         lbl_reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconReportes.png"))); // NOI18N
         lbl_reportes.setText("Reportes");
-        backgroundMenu.add(lbl_reportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
+        backgroundMenu.add(lbl_reportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
 
         jSeparator4.setBackground(new java.awt.Color(243, 234, 232));
         jSeparator4.setForeground(new java.awt.Color(39, 18, 7));
-        backgroundMenu.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 193, 17));
+        backgroundMenu.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 193, 17));
 
         btn_verReportes.setBackground(new java.awt.Color(132, 119, 112));
         btn_verReportes.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -191,7 +192,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 btn_verReportesActionPerformed(evt);
             }
         });
-        backgroundMenu.add(btn_verReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 240, 30));
+        backgroundMenu.add(btn_verReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 240, 30));
 
         btn_cerrarSesion.setBackground(new java.awt.Color(255, 102, 102));
         btn_cerrarSesion.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -236,17 +237,28 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_nuevoCliente1ActionPerformed
 
     private void btn_listarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarClientesActionPerformed
-        // TODO add your handling code here:
+        ListarClientes view = new ListarClientes();
+        cambiarPanel(view);
     }//GEN-LAST:event_btn_listarClientesActionPerformed
-
-    private void btn_nuevoProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoProyectoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_nuevoProyectoActionPerformed
 
     private void btn_consultarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarHistorialActionPerformed
         HistorialCliente view = new HistorialCliente();
         cambiarPanel(view);
     }//GEN-LAST:event_btn_consultarHistorialActionPerformed
+
+    private void btn_verEquipos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verEquipos1ActionPerformed
+        ListarEquipos view = new ListarEquipos();
+        cambiarPanel(view);    }//GEN-LAST:event_btn_verEquipos1ActionPerformed
+
+    private void btn_verEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verEmpleadosActionPerformed
+        ListarEmpleados view = new ListarEmpleados();
+        cambiarPanel(view);
+    }//GEN-LAST:event_btn_verEmpleadosActionPerformed
+
+    private void btn_verProyectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verProyectosActionPerformed
+        ListarProyectos view = new ListarProyectos();
+        cambiarPanel(view);
+    }//GEN-LAST:event_btn_verProyectosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,7 +301,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btn_consultarHistorial;
     private javax.swing.JButton btn_listarClientes;
     private javax.swing.JButton btn_nuevoCliente1;
-    private javax.swing.JButton btn_nuevoProyecto;
     private javax.swing.JButton btn_verEmpleados;
     private javax.swing.JButton btn_verEquipos1;
     private javax.swing.JButton btn_verProyectos;

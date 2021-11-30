@@ -26,19 +26,103 @@ public class ListarProyectos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        bg_proyectos = new javax.swing.JPanel();
+        bgBienvenida1 = new javax.swing.JPanel();
+        lbl_bienvenida1 = new javax.swing.JLabel();
+        lbl_infoUsuario = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        bgCuit = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txt_busqueda = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+
+        bg_proyectos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bgBienvenida1.setBackground(new java.awt.Color(0, 0, 0));
+        bgBienvenida1.setForeground(new java.awt.Color(255, 255, 255));
+        bgBienvenida1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbl_bienvenida1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        lbl_bienvenida1.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_bienvenida1.setText("Lista de proyectos");
+        bgBienvenida1.add(lbl_bienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        bg_proyectos.add(bgBienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 830, 60));
+
+        lbl_infoUsuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lbl_infoUsuario.setText("Usuario: Nombre y apellido empleado - Rol: Administrador");
+        bg_proyectos.add(lbl_infoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Cliente", "Nombre proyecto", "Fecha de inicio", "Horas ", "Estado", "Total"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        bg_proyectos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 810, 470));
+
+        bgCuit.setBackground(new java.awt.Color(231, 197, 59));
+        bgCuit.setForeground(new java.awt.Color(255, 255, 255));
+        bgCuit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        jLabel1.setText("Estado");
+        bgCuit.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, -1, -1));
+
+        txt_busqueda.setBorder(null);
+        txt_busqueda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_busquedaMouseClicked(evt);
+            }
+        });
+        bgCuit.add(txt_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 390, 20));
+
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        jLabel2.setText("Nombre de proyecto");
+        bgCuit.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        bgCuit.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 100, -1));
+
+        bg_proyectos.add(bgCuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 830, 60));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(bg_proyectos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(bg_proyectos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txt_busquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_busquedaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_busquedaMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bgBienvenida1;
+    private javax.swing.JPanel bgCuit;
+    private javax.swing.JPanel bg_proyectos;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lbl_bienvenida1;
+    private javax.swing.JLabel lbl_infoUsuario;
+    private javax.swing.JTextField txt_busqueda;
     // End of variables declaration//GEN-END:variables
 }

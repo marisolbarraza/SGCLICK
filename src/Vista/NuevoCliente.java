@@ -15,6 +15,7 @@ public class NuevoCliente extends javax.swing.JFrame {
      */
     public NuevoCliente() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -51,6 +52,9 @@ public class NuevoCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(132, 119, 112));
+        setFocusable(false);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(241, 232, 118));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -110,11 +114,6 @@ public class NuevoCliente extends javax.swing.JFrame {
         cb_localidad.setEditable(true);
         cb_localidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cb_localidad.setBorder(null);
-        cb_localidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_localidadActionPerformed(evt);
-            }
-        });
         jPanel1.add(cb_localidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 100, -1));
 
         lbl_Provincia1.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
@@ -136,13 +135,23 @@ public class NuevoCliente extends javax.swing.JFrame {
         btn_registrar.setBackground(new java.awt.Color(153, 204, 0));
         btn_registrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconCheck.png"))); // NOI18N
         btn_registrar.setText("Añadir Usuario");
-        btn_registrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btn_registrar.setBorder(null);
+        btn_registrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_registrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 140, 40));
 
         btn_cancelar.setBackground(new java.awt.Color(255, 0, 51));
         btn_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconCancel.png"))); // NOI18N
         btn_cancelar.setText("Cancelar");
-        btn_cancelar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btn_cancelar.setBorder(null);
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 130, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -159,9 +168,14 @@ public class NuevoCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cb_localidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_localidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cb_localidadActionPerformed
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
+        this.dispose();
+               
+    }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void btn_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_btn_registrarActionPerformed
 
     /**
      * @param args the command line arguments
