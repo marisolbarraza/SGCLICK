@@ -18,9 +18,9 @@ public class Factura {
     public Factura(int nroFactura, Date fechaEmisión, double total, ArrayList<Detalle> detalles, boolean visible) {
         this.nroFactura = nroFactura;
         this.fechaEmisión = fechaEmisión;
-        this.total = total;
         this.detalles=detalles;
-        this.visible = visible;
+        this.total = CalcularTotal(detalles);
+        this.visible = true;
     }
 
     public int getNroFactura() {
@@ -65,7 +65,13 @@ public class Factura {
         this.detalles = detalles;
     }
     
-    
+    private double CalcularTotal(ArrayList<Detalle> detalles){
+        double total = 0.0;
+        for(int i=0; i<detalles.size();i++){
+            total += detalles.get(i).getSubtotal();
+        }
+        return total;
+    }
     
     
 }

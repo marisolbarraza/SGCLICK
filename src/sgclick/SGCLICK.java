@@ -1,9 +1,14 @@
 package sgclick;
 
+import Controlador.ControlIniciarSesion;
+import Modelo.Domicilio;
 import Modelo.Historial;
+import Modelo.Rol;
+import Persistencia.Database;
 import Vista.HistorialCliente;
 import Vista.InicioSesion;
 import Vista.VistaPrincipal;
+import java.util.ArrayList;
 
 
 
@@ -18,9 +23,11 @@ public class SGCLICK {
      */
     public static void main(String[] args) {
         
+        Database db = new Database();
         
-        VistaPrincipal v = new VistaPrincipal();
-        v.setVisible(true);
+        
+        
+        
         
     }
     

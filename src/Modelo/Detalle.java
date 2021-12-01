@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelo;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -13,14 +12,14 @@ public class Detalle {
     private double horasPagas;
     private double subtotal;
     private Proyecto proyecto;
-    private Factura factura; //aquí tengo duda, si iría un array de detalles en factura, o ponemos aqui a que factura corresponde el detalle(?
+    
 
-    public Detalle(int id, double horasPagas, double subtotal, Proyecto proyecto, Factura factura) {
+    public Detalle(int id, double horasPagas, double subtotal, Proyecto proyecto) {
         this.id = id;
         this.horasPagas = horasPagas;
-        this.subtotal = subtotal;
+        this.subtotal = horasPagas*1800;
         this.proyecto = proyecto;
-        this.factura = factura;
+        
     }
 
     
@@ -56,13 +55,6 @@ public class Detalle {
         this.proyecto = proyecto;
     }
 
-    public Factura getFactura() {
-        return factura;
-    }
-
-    public void setFactura(Factura factura) {
-        this.factura = factura;
-    }
-    
+   
     
 }

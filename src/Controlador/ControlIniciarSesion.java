@@ -4,10 +4,23 @@
  */
 package Controlador;
 
+import Vista.InicioSesion;
+
 /**
  *
  * @author Marisol
  */
 public class ControlIniciarSesion {
+    
+    InicioSesion view;
+    public ControlIniciarSesion() {
+        view = new InicioSesion();
+        view.setVisible(true);
+    }
+    
+    public void IniciarSesion(){
+        
+    }
+    
     
 }
