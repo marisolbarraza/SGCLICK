@@ -130,6 +130,11 @@ public class HistorialCliente extends javax.swing.JPanel {
                 txt_busquedaMouseClicked(evt);
             }
         });
+        txt_busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_busquedaKeyPressed(evt);
+            }
+        });
         bgCuit.add(txt_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 380, 20));
 
         btn_guardartodo.setBackground(new java.awt.Color(102, 153, 0));
@@ -612,6 +617,10 @@ public class HistorialCliente extends javax.swing.JPanel {
     private void btn_emitirfacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_emitirfacActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_emitirfacActionPerformed
+
+    private void txt_busquedaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_busquedaKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_busquedaKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
