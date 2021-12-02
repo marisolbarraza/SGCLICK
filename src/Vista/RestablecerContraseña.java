@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import java.util.Properties;
+
 /**
  *
  * @author Marisol
@@ -38,7 +40,8 @@ public class RestablecerContraseña extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         btn_salir = new javax.swing.JButton();
-        btn_enviar1 = new javax.swing.JButton();
+        btn_enviar = new javax.swing.JButton();
+        lbl_Error = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -49,19 +52,19 @@ public class RestablecerContraseña extends javax.swing.JFrame {
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbl_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo pequeño.png"))); // NOI18N
-        background.add(lbl_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 66));
+        background.add(lbl_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, 66));
 
         lbl_restablecer.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         lbl_restablecer.setText("RESTABLECER CONTRASEÑA");
-        background.add(lbl_restablecer, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        background.add(lbl_restablecer, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
 
         lbl_legajo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lbl_legajo.setText("Legajo");
-        background.add(lbl_legajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
+        background.add(lbl_legajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
 
         lbl_mail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lbl_mail.setText("Correo Electrónico");
-        background.add(lbl_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
+        background.add(lbl_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
 
         btn_volverAtras.setBackground(new java.awt.Color(132, 119, 112));
         btn_volverAtras.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -74,7 +77,7 @@ public class RestablecerContraseña extends javax.swing.JFrame {
                 btn_volverAtrasActionPerformed(evt);
             }
         });
-        background.add(btn_volverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 180, 30));
+        background.add(btn_volverAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 180, 30));
 
         txt_legajo.setForeground(new java.awt.Color(153, 153, 153));
         txt_legajo.setText("Ingrese el legajo...");
@@ -89,18 +92,23 @@ public class RestablecerContraseña extends javax.swing.JFrame {
                 txt_legajoActionPerformed(evt);
             }
         });
-        background.add(txt_legajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 170, 30));
+        background.add(txt_legajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 170, 30));
 
         txt_mail.setForeground(new java.awt.Color(153, 153, 153));
-        txt_mail.setText("Ingrese la contraseña...");
+        txt_mail.setText("Ingrese el correo...");
         txt_mail.setBorder(null);
-        background.add(txt_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 150, 30));
+        txt_mail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_mailMouseClicked(evt);
+            }
+        });
+        background.add(txt_mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 150, 30));
 
         jSeparator1.setForeground(new java.awt.Color(243, 234, 232));
-        background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 190, 20));
+        background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 190, 20));
 
         jSeparator2.setForeground(new java.awt.Color(243, 234, 232));
-        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 190, 20));
+        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 190, 20));
 
         btn_salir.setBackground(new java.awt.Color(255, 255, 255));
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconSalir.png"))); // NOI18N
@@ -112,21 +120,26 @@ public class RestablecerContraseña extends javax.swing.JFrame {
                 btn_salirActionPerformed(evt);
             }
         });
-        background.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 40, -1));
+        background.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 40, -1));
 
-        btn_enviar1.setBackground(new java.awt.Color(231, 197, 59));
-        btn_enviar1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btn_enviar1.setText("Enviar al correo");
-        btn_enviar1.setBorder(null);
-        btn_enviar1.setFocusable(false);
-        btn_enviar1.addActionListener(new java.awt.event.ActionListener() {
+        btn_enviar.setBackground(new java.awt.Color(231, 197, 59));
+        btn_enviar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btn_enviar.setText("Enviar al correo");
+        btn_enviar.setBorder(null);
+        btn_enviar.setFocusable(false);
+        btn_enviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_enviar1ActionPerformed(evt);
+                btn_enviarActionPerformed(evt);
             }
         });
-        background.add(btn_enviar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 120, 30));
+        background.add(btn_enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 120, 30));
 
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 460));
+        lbl_Error.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        lbl_Error.setForeground(new java.awt.Color(204, 0, 0));
+        lbl_Error.setText("mensaje");
+        background.add(lbl_Error, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 380, 30));
+
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -136,9 +149,7 @@ public class RestablecerContraseña extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_legajoActionPerformed
 
     private void btn_volverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_volverAtrasActionPerformed
-        this.dispose();
-        InicioSesion view = new InicioSesion();
-        view.setVisible(true);
+       
     }//GEN-LAST:event_btn_volverAtrasActionPerformed
 
     private void txt_legajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_legajoMouseClicked
@@ -146,12 +157,16 @@ public class RestablecerContraseña extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_legajoMouseClicked
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-       this.dispose();
+      
     }//GEN-LAST:event_btn_salirActionPerformed
 
-    private void btn_enviar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enviar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_enviar1ActionPerformed
+    private void btn_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enviarActionPerformed
+      
+    }//GEN-LAST:event_btn_enviarActionPerformed
+
+    private void txt_mailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_mailMouseClicked
+        txt_mail.setText("");
+    }//GEN-LAST:event_txt_mailMouseClicked
 
     /**
      * @param args the command line arguments
@@ -190,16 +205,17 @@ public class RestablecerContraseña extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
-    private javax.swing.JButton btn_enviar1;
-    private javax.swing.JButton btn_salir;
-    private javax.swing.JButton btn_volverAtras;
+    public javax.swing.JButton btn_enviar;
+    public javax.swing.JButton btn_salir;
+    public javax.swing.JButton btn_volverAtras;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    public javax.swing.JLabel lbl_Error;
     private javax.swing.JLabel lbl_legajo;
     private javax.swing.JLabel lbl_logo;
     private javax.swing.JLabel lbl_mail;
     private javax.swing.JLabel lbl_restablecer;
-    private javax.swing.JTextField txt_legajo;
-    private javax.swing.JTextField txt_mail;
+    public javax.swing.JTextField txt_legajo;
+    public javax.swing.JTextField txt_mail;
     // End of variables declaration//GEN-END:variables
 }

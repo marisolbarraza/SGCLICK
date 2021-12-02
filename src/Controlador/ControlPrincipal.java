@@ -18,6 +18,7 @@ public class ControlPrincipal implements ActionListener{
     public ControlPrincipal(VistaPrincipal v) {
         this.vp=v;
         this.vp.setVisible(true);
+       
     }
 
     

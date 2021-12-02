@@ -6,7 +6,8 @@ import Modelo.Empleado;
 import Modelo.Historial;
 import Modelo.Rol;
 import Modelo.Usuario;
-import Persistencia.Database;
+import Recursos.Database;
+import Recursos.GeneradorContraseñas;
 import Vista.HistorialCliente;
 import Vista.InicioSesion;
 import Vista.VistaPrincipal;
@@ -32,6 +33,12 @@ public class SGCLICK {
 //        
 //        boolean v = db.accederSistema(44444, "Luchocosta02");
 //        System.out.println(v);
+
+// the random string length
+        int i = 15; 
+
+        // output 
+        System.out.println("A random string: " + GeneradorContraseñas.getRandomString(i));
         
         
         

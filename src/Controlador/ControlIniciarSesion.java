@@ -4,8 +4,9 @@
  */
 package Controlador;
 
-import Persistencia.Database;
+import Recursos.Database;
 import Vista.InicioSesion;
+import Vista.RestablecerContraseña;
 import Vista.VistaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,7 +35,7 @@ public class ControlIniciarSesion implements ActionListener{
        
         if(e.getSource()==sesion.btn_salir) sesion.dispose();
         if(e.getSource()==sesion.btn_ingresar) ValidarDatos();
-        if(e.getSource()==sesion.btn_restablecer) RestablecerContraseña(); 
+        if(e.getSource()==sesion.btn_restablecer) CambiarContraseña(); 
     }
     
      private void ValidarDatos(){
@@ -72,8 +73,12 @@ public class ControlIniciarSesion implements ActionListener{
           else return false;
       }
     
-     private void RestablecerContraseña(){
-         
+     private void CambiarContraseña(){
+        RestablecerContraseña view = new RestablecerContraseña();
+        ControlRestablecerContra control = new ControlRestablecerContra(view);
+        sesion.dispose();
+        
+        
      }
     
 }

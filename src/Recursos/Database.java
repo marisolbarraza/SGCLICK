@@ -1,5 +1,5 @@
 
-package Persistencia;
+package Recursos;
 
 import Modelo.Domicilio;
 import Modelo.Empleado;
