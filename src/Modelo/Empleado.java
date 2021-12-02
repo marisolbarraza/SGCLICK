@@ -16,11 +16,12 @@ public class Empleado {
     private Date fechaNacimiento;
     private Domicilio domicilio;
     private int telefono;
+    private String mail;
     private Date fechaIngreso;
     private Rol rol;
     private int visible;
 
-    public Empleado(int legajo, int dni, String apellido, String nombre, Date fechaNacimiento, Domicilio domicilio, int telefono, Date fechaIngreso, Rol rol, int visible) {
+    public Empleado(int legajo, int dni, String apellido, String nombre, Date fechaNacimiento, Domicilio domicilio, int telefono, String mail, Date fechaIngreso, Rol rol, int visible) {
         this.legajo = legajo;
         this.dni = dni;
         this.apellido = apellido;
@@ -28,10 +29,13 @@ public class Empleado {
         this.fechaNacimiento = fechaNacimiento;
         this.domicilio = domicilio;
         this.telefono = telefono;
+        this.mail = mail;
         this.fechaIngreso = fechaIngreso;
         this.rol = rol;
         this.visible = visible;
     }
+
+    
 
     public int getLegajo() {
         return legajo;
@@ -111,6 +115,14 @@ public class Empleado {
 
     public void setVisible(int visible) {
         this.visible = visible;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
     
     

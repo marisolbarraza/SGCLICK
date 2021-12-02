@@ -29,9 +29,11 @@ public class SGCLICK {
        InicioSesion view = new InicioSesion();
         ControlIniciarSesion c = new ControlIniciarSesion(view);
         
-       /*Database db= new Database();
+       Database db= new Database();
        
-       db.cambiarContraseña(44539, "hiosdds");*/
+       Usuario d = db.seleccionarUsuario(44444);
+       
+       
 
 
         

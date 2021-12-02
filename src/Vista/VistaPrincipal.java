@@ -16,9 +16,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
      * Creates new form VistaPrincipal
      */
     public VistaPrincipal() {
-        Bienvenida view = new Bienvenida();
+       
         initComponents();
-        cambiarPanel(view);
         this.setLocationRelativeTo(null);
     }
 
@@ -42,8 +41,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btn_consultarHistorial = new javax.swing.JButton();
         lbl_proyectos = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        btn_nuevoCliente1 = new javax.swing.JButton();
-        btn_verEquipos1 = new javax.swing.JButton();
+        btn_nuevoCliente = new javax.swing.JButton();
+        btn_verEquipos = new javax.swing.JButton();
         lbl_reportes = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         btn_verReportes = new javax.swing.JButton();
@@ -89,11 +88,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btn_listarClientes.setText("Listar Clientes");
         btn_listarClientes.setBorder(null);
         btn_listarClientes.setFocusable(false);
-        btn_listarClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_listarClientesActionPerformed(evt);
-            }
-        });
         backgroundMenu.add(btn_listarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 240, 30));
 
         lbl_equiposDesarrollo.setBackground(new java.awt.Color(39, 18, 7));
@@ -144,31 +138,26 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(39, 18, 7));
         backgroundMenu.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 193, 17));
 
-        btn_nuevoCliente1.setBackground(new java.awt.Color(132, 119, 112));
-        btn_nuevoCliente1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btn_nuevoCliente1.setForeground(new java.awt.Color(255, 255, 255));
-        btn_nuevoCliente1.setText("+ Nuevo cliente");
-        btn_nuevoCliente1.setBorder(null);
-        btn_nuevoCliente1.setFocusable(false);
-        btn_nuevoCliente1.addActionListener(new java.awt.event.ActionListener() {
+        btn_nuevoCliente.setBackground(new java.awt.Color(132, 119, 112));
+        btn_nuevoCliente.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btn_nuevoCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btn_nuevoCliente.setText("+ Nuevo cliente");
+        btn_nuevoCliente.setBorder(null);
+        btn_nuevoCliente.setFocusable(false);
+        btn_nuevoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_nuevoCliente1ActionPerformed(evt);
+                btn_nuevoClienteActionPerformed(evt);
             }
         });
-        backgroundMenu.add(btn_nuevoCliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 240, 30));
+        backgroundMenu.add(btn_nuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 240, 30));
 
-        btn_verEquipos1.setBackground(new java.awt.Color(132, 119, 112));
-        btn_verEquipos1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btn_verEquipos1.setForeground(new java.awt.Color(255, 255, 255));
-        btn_verEquipos1.setText("Ver Equipos");
-        btn_verEquipos1.setBorder(null);
-        btn_verEquipos1.setFocusable(false);
-        btn_verEquipos1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_verEquipos1ActionPerformed(evt);
-            }
-        });
-        backgroundMenu.add(btn_verEquipos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 240, 30));
+        btn_verEquipos.setBackground(new java.awt.Color(132, 119, 112));
+        btn_verEquipos.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btn_verEquipos.setForeground(new java.awt.Color(255, 255, 255));
+        btn_verEquipos.setText("Ver Equipos");
+        btn_verEquipos.setBorder(null);
+        btn_verEquipos.setFocusable(false);
+        backgroundMenu.add(btn_verEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 240, 30));
 
         lbl_reportes.setBackground(new java.awt.Color(39, 18, 7));
         lbl_reportes.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
@@ -209,12 +198,21 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(backgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 720));
 
+        container.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                containerAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         container.setLayout(new java.awt.CardLayout());
         getContentPane().add(container, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 870, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void cambiarPanel(JPanel panelActual){
+    public void cambiarPanel(JPanel panelActual){
         container.removeAll();
         container.add(panelActual);
         container.repaint();
@@ -222,43 +220,38 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
     
     private void btn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarSesionActionPerformed
-       InicioSesion view = new InicioSesion();
+      /* InicioSesion view = new InicioSesion();
        this.dispose();
-       view.setVisible(true);
+       view.setVisible(true);*/
     }//GEN-LAST:event_btn_cerrarSesionActionPerformed
 
     private void btn_verReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verReportesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_verReportesActionPerformed
 
-    private void btn_nuevoCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoCliente1ActionPerformed
+    private void btn_nuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoClienteActionPerformed
         NuevoCliente view = new NuevoCliente();
         view.setVisible(true);
-    }//GEN-LAST:event_btn_nuevoCliente1ActionPerformed
-
-    private void btn_listarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarClientesActionPerformed
-        ListarClientes view = new ListarClientes();
-        cambiarPanel(view);
-    }//GEN-LAST:event_btn_listarClientesActionPerformed
+    }//GEN-LAST:event_btn_nuevoClienteActionPerformed
 
     private void btn_consultarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarHistorialActionPerformed
-        HistorialCliente view = new HistorialCliente();
-        cambiarPanel(view);
+        //HistorialCliente view = new HistorialCliente();
+       // cambiarPanel(view);
     }//GEN-LAST:event_btn_consultarHistorialActionPerformed
 
-    private void btn_verEquipos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verEquipos1ActionPerformed
-        ListarEquipos view = new ListarEquipos();
-        cambiarPanel(view);    }//GEN-LAST:event_btn_verEquipos1ActionPerformed
-
     private void btn_verEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verEmpleadosActionPerformed
-        ListarEmpleados view = new ListarEmpleados();
-        cambiarPanel(view);
+       /* ListarEmpleados view = new ListarEmpleados();*/
+//        cambiarPanel(view);
     }//GEN-LAST:event_btn_verEmpleadosActionPerformed
 
     private void btn_verProyectosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verProyectosActionPerformed
-        ListarProyectos view = new ListarProyectos();
-        cambiarPanel(view);
+        /*ListarProyectos view = new ListarProyectos();*/
+//        cambiarPanel(view);
     }//GEN-LAST:event_btn_verProyectosActionPerformed
+
+    private void containerAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_containerAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_containerAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -300,9 +293,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btn_cerrarSesion;
     public javax.swing.JButton btn_consultarHistorial;
     public javax.swing.JButton btn_listarClientes;
-    public javax.swing.JButton btn_nuevoCliente1;
+    public javax.swing.JButton btn_nuevoCliente;
     public javax.swing.JButton btn_verEmpleados;
-    public javax.swing.JButton btn_verEquipos1;
+    public javax.swing.JButton btn_verEquipos;
     public javax.swing.JButton btn_verProyectos;
     public javax.swing.JButton btn_verReportes;
     public javax.swing.JPanel container;

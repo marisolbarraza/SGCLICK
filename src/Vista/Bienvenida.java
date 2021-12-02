@@ -13,7 +13,8 @@ public class Bienvenida extends javax.swing.JPanel {
     /**
      * Creates new form Bienvenida
      */
-    public Bienvenida() {
+    public Bienvenida( ) {
+        
         initComponents();
     }
 
@@ -50,8 +51,8 @@ public class Bienvenida extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel bgBienvenida1;
-    private javax.swing.JLabel lbl_bienvenida1;
-    private javax.swing.JLabel lbl_infoUsuario;
+    public javax.swing.JPanel bgBienvenida1;
+    public javax.swing.JLabel lbl_bienvenida1;
+    public javax.swing.JLabel lbl_infoUsuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,13 +4,13 @@
  */
 package Controlador;
 
+import Modelo.Usuario;
 import Recursos.Database;
 import Vista.InicioSesion;
 import Vista.RestablecerContraseña;
 import Vista.VistaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,11 +43,10 @@ public class ControlIniciarSesion implements ActionListener{
        
        boolean campoVacio = CamposVacios(leg,contraseña );
        
-              
        if(campoVacio==true){
            sesion.lbl_Error.setText("Campos legajo/contraseña vacíos."
                   + " Por favor revise y vuelva ingresar.");
-          sesion.lbl_Error.setVisible(true);
+           sesion.lbl_Error.setVisible(true);
           
        }else{
            int legajo= Integer.parseInt(sesion.txt_legajo.getText());
@@ -60,8 +59,10 @@ public class ControlIniciarSesion implements ActionListener{
                 
             }
             if(validar==true){
-                 VistaPrincipal vp = new VistaPrincipal();
-                ControlPrincipal control= new ControlPrincipal(vp);
+                
+                VistaPrincipal vp = new VistaPrincipal();
+                Usuario u = db.seleccionarUsuario(legajo);
+                ControlPrincipal control= new ControlPrincipal(vp,u);
                 sesion.dispose();
             }
        }    
