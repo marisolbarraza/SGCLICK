@@ -17,11 +17,10 @@ public class Empleado {
     private Domicilio domicilio;
     private int telefono;
     private Date fechaIngreso;
-    private ArrayList<Rol> roles;
-    private ArrayList<EquipoDesarrollo> equipos;
-    
+    private Rol rol;
+    private int visible;
 
-    public Empleado(int legajo, int dni, String apellido, String nombre, Date fechaNacimiento, Domicilio domicilio, int telefono, Date fechaIngreso, ArrayList<Rol> roles, ArrayList<EquipoDesarrollo> equipos) {
+    public Empleado(int legajo, int dni, String apellido, String nombre, Date fechaNacimiento, Domicilio domicilio, int telefono, Date fechaIngreso, Rol rol, int visible) {
         this.legajo = legajo;
         this.dni = dni;
         this.apellido = apellido;
@@ -30,8 +29,8 @@ public class Empleado {
         this.domicilio = domicilio;
         this.telefono = telefono;
         this.fechaIngreso = fechaIngreso;
-        this.roles = roles;
-        this.equipos = equipos;
+        this.rol = rol;
+        this.visible = visible;
     }
 
     public int getLegajo() {
@@ -98,22 +97,24 @@ public class Empleado {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public ArrayList<Rol> getRoles() {
-        return roles;
+    public Rol getRol() {
+        return rol;
     }
 
-    public void setRoles(ArrayList<Rol> roles) {
-        this.roles = roles;
+    public void setRol(Rol rol) {
+        this.rol = rol;
     }
 
-    public ArrayList<EquipoDesarrollo> getEquipos() {
-        return equipos;
+    public int isVisible() {
+        return visible;
     }
 
-    public void setEquipos(ArrayList<EquipoDesarrollo> equipos) {
-        this.equipos = equipos;
+    public void setVisible(int visible) {
+        this.visible = visible;
     }
     
     
     
+    
+
 }

@@ -18,8 +18,8 @@ public class InicioSesion extends javax.swing.JFrame {
         
         initComponents();
         this.setLocationRelativeTo(null);
-        lbl_Error.setVisible(false);
         
+      
     }
 
     /**
@@ -40,11 +40,11 @@ public class InicioSesion extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         lbl_problemas = new javax.swing.JLabel();
-        lbl_restablecer = new javax.swing.JLabel();
         lbl_Error = new javax.swing.JLabel();
         btn_ingresar = new javax.swing.JButton();
         txt_contraseña = new javax.swing.JPasswordField();
         btn_salir = new javax.swing.JButton();
+        btn_restablecer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -54,20 +54,20 @@ public class InicioSesion extends javax.swing.JFrame {
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         img_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo pequeño.png"))); // NOI18N
-        background.add(img_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 69));
+        background.add(img_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, 69));
 
         lbl_iniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
         lbl_iniciarSesion.setFont(new java.awt.Font("Roboto Black", 0, 20)); // NOI18N
         lbl_iniciarSesion.setText("INICIAR SESIÓN");
-        background.add(lbl_iniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
+        background.add(lbl_iniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, -1));
 
         lbl_legajo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lbl_legajo.setText("Legajo");
-        background.add(lbl_legajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
+        background.add(lbl_legajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
 
         lbl_contraseña.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lbl_contraseña.setText("Contraseña");
-        background.add(lbl_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, -1, -1));
+        background.add(lbl_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
 
         txt_legajo.setForeground(new java.awt.Color(153, 153, 153));
         txt_legajo.setText("Ingrese su legajo...");
@@ -83,43 +83,38 @@ public class InicioSesion extends javax.swing.JFrame {
                 txt_legajoActionPerformed(evt);
             }
         });
-        background.add(txt_legajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 160, 30));
+        background.add(txt_legajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 160, 30));
 
         jSeparator1.setForeground(new java.awt.Color(243, 234, 232));
-        background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 160, 20));
+        background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 160, 20));
 
         jSeparator2.setForeground(new java.awt.Color(243, 234, 232));
-        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 160, 20));
+        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 160, 20));
 
         lbl_problemas.setFont(new java.awt.Font("Roboto Light", 0, 11)); // NOI18N
         lbl_problemas.setText("¿Problemas al ingresar?");
-        background.add(lbl_problemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+        background.add(lbl_problemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, -1, -1));
 
-        lbl_restablecer.setFont(new java.awt.Font("Roboto Light", 1, 11)); // NOI18N
-        lbl_restablecer.setForeground(new java.awt.Color(132, 119, 112));
-        lbl_restablecer.setText("Restablecer contraseña");
-        lbl_restablecer.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        lbl_restablecer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_restablecerMouseClicked(evt);
-            }
-        });
-        background.add(lbl_restablecer, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, -1, -1));
-
+        lbl_Error.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         lbl_Error.setForeground(new java.awt.Color(204, 0, 0));
         lbl_Error.setText("mensaje");
-        background.add(lbl_Error, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 210, -1));
+        background.add(lbl_Error, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 380, 30));
 
         btn_ingresar.setBackground(new java.awt.Color(231, 197, 59));
         btn_ingresar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btn_ingresar.setText("Ingresar");
         btn_ingresar.setBorder(null);
-        background.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 120, 30));
+        background.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 120, 30));
 
         txt_contraseña.setForeground(new java.awt.Color(153, 153, 153));
         txt_contraseña.setText("jPasswordField1");
         txt_contraseña.setBorder(null);
-        background.add(txt_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 170, 30));
+        txt_contraseña.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txt_contraseñaMouseClicked(evt);
+            }
+        });
+        background.add(txt_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 170, 30));
 
         btn_salir.setBackground(new java.awt.Color(255, 255, 255));
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconSalir.png"))); // NOI18N
@@ -131,19 +126,29 @@ public class InicioSesion extends javax.swing.JFrame {
                 btn_salirActionPerformed(evt);
             }
         });
-        background.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 40, -1));
+        background.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 40, -1));
+
+        btn_restablecer.setBackground(new java.awt.Color(255, 255, 255));
+        btn_restablecer.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
+        btn_restablecer.setForeground(new java.awt.Color(132, 119, 112));
+        btn_restablecer.setText("Restablecer contraseña");
+        btn_restablecer.setBorder(null);
+        btn_restablecer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_restablecerActionPerformed(evt);
+            }
+        });
+        background.add(btn_restablecer, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
         );
 
         pack();
@@ -153,19 +158,21 @@ public class InicioSesion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_legajoActionPerformed
 
-    private void lbl_restablecerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_restablecerMouseClicked
-        RestablecerContraseña view = new RestablecerContraseña();
-        this.setVisible(false);
-        view.setVisible(true);
-    }//GEN-LAST:event_lbl_restablecerMouseClicked
-
     private void txt_legajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_legajoMouseClicked
         txt_legajo.setText("");
     }//GEN-LAST:event_txt_legajoMouseClicked
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-        this.dispose();
+     //   this.dispose();
     }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void txt_contraseñaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_contraseñaMouseClicked
+        txt_contraseña.setText("");
+    }//GEN-LAST:event_txt_contraseñaMouseClicked
+
+    private void btn_restablecerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_restablecerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_restablecerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,18 +211,20 @@ public class InicioSesion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
-    private javax.swing.JButton btn_ingresar;
-    private javax.swing.JButton btn_salir;
+    public javax.swing.JButton btn_ingresar;
+    public javax.swing.JButton btn_restablecer;
+    public javax.swing.JButton btn_salir;
     private javax.swing.JLabel img_logo;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel lbl_Error;
+    public javax.swing.JLabel lbl_Error;
     private javax.swing.JLabel lbl_contraseña;
     private javax.swing.JLabel lbl_iniciarSesion;
     private javax.swing.JLabel lbl_legajo;
     private javax.swing.JLabel lbl_problemas;
-    private javax.swing.JLabel lbl_restablecer;
-    private javax.swing.JPasswordField txt_contraseña;
-    private javax.swing.JTextField txt_legajo;
+    public javax.swing.JPasswordField txt_contraseña;
+    public javax.swing.JTextField txt_legajo;
     // End of variables declaration//GEN-END:variables
+
+   
 }

@@ -35,48 +35,68 @@ public class Database {
         return c;
     }
     
-    public Usuario buscarCuenta(int legajo, String contraseña){
-        Usuario user=null;
-        Empleado empleado;
+    public boolean accederSistema(int legajo, String contraseña){
         
        try {
          Connection c = getConnection();
          Statement s = c.createStatement();
-         String sql = "select * from usuario" +
-                      "where Empleado_legajoEmpleado ="+ legajo +" and usuario.contraseña =" + contraseña;
+         String sql = "select * from usuario where Empleado_legajoEmpleado = "+legajo+ " and contraseña = \""+contraseña+"\" and visible=1";                 
          ResultSet r = s.executeQuery(sql);
          
-         empleado = buscarEmpleado(r.getInt("Empleado_legajoEmpleado"));
+         while(r.next()){
+             
+             if(r.getInt("visible")==1) return true;            
+          } 
          
        
          
         } catch(Exception e){
             e.printStackTrace();
         }
-        return user;
+        return false;
         
     }
     
     public Empleado buscarEmpleado(int legajo){
         
-        Domicilio domicilio;
-        ArrayList<Rol> roles;
-        ArrayList<EquipoDesarrollo> equipo;
+        Empleado emp = null;
          try {
          Connection c = getConnection();
          Statement s = c.createStatement();
          String sql = "select * from usuario" +
                       "where legajoEmpleado ="+ legajo +" and visible = 1";
-         ResultSet r = s.executeQuery(sql);         
-        
+         ResultSet r = s.executeQuery(sql);
+         
+         while(r.next()){
+             Domicilio d = buscarDomicilio(r.getInt("domicilio_idDomicilio"));
+             Rol rol = buscarRoles(r.getInt("Rol_idRol"));
+             emp = new Empleado(r.getInt("legajoEmpleado"),r.getInt("dni"),r.getString("nombre"),r.getString("apellido"),r.getDate("fechaNac"), d,r.getInt("telefono"),r.getDate("fechIngreso"),rol,r.getInt("visible"));    
+             //int legajo, int dni, String apellido, String nombre, Date fechaNacimiento, Domicilio domicilio, int telefono, Date fechaIngreso, Rol rol, boolean visible
+             
+          } 
         } catch(Exception e){
             e.printStackTrace();
         }
         
-        return null;
+        return emp;
     }
-    public ArrayList<Rol> buscarRoles(int id){
-        return null;
+    public Rol buscarRoles(int id){
+        
+        Rol d = null;
+        try {
+         Connection c = getConnection();
+         Statement s = c.createStatement();
+         String sql = "select * from rol where idRol="+ id;
+         ResultSet r = s.executeQuery(sql);
+         
+         while(r.next()){
+              d= new Rol(r.getString("descripcion"));    
+          } 
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        return d;
+        
                
     }
     public ArrayList<EquipoDesarrollo> buscarEquipos(int id){

@@ -9,10 +9,10 @@ public class Usuario {
     private int id;
     private String contraseña;
     private Empleado empleado;
-    private  boolean esAdmin;
-    private  boolean visible;
+    private  int esAdmin;
+    private  int visible;
 
-    public Usuario(int id, String contraseña, Empleado empleado, boolean esAdmin, boolean visible) {
+    public Usuario(int id, String contraseña, Empleado empleado, int esAdmin, int visible) {
         this.id = id;
         this.contraseña = contraseña;
         this.empleado = empleado;
@@ -36,19 +36,19 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
-    public boolean isEsAdmin() {
+    public int isEsAdmin() {
         return esAdmin;
     }
 
-    public void setEsAdmin(boolean esAdmin) {
+    public void setEsAdmin(int esAdmin) {
         this.esAdmin = esAdmin;
     }
 
-    public boolean isVisible() {
+    public int isVisible() {
         return visible;
     }
 
-    public void setVisible(boolean visible) {
+    public void setVisible(int visible) {
         this.visible = visible;
     }
 
