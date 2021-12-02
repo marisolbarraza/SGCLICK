@@ -4,6 +4,8 @@
  */
 package Controlador;
 
+import Modelo.Empleado;
+import Modelo.Usuario;
 import Vista.VistaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +17,8 @@ import java.awt.event.ActionListener;
 public class ControlPrincipal implements ActionListener{
 
     VistaPrincipal vp;
+    Empleado empleado;
+    Usuario usuario;
     public ControlPrincipal(VistaPrincipal v) {
         this.vp=v;
         this.vp.setVisible(true);

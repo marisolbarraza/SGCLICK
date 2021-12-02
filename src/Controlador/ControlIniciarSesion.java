@@ -28,8 +28,6 @@ public class ControlIniciarSesion implements ActionListener{
         this.sesion.setVisible(true);
     }
     
-   
-
     @Override
     public void actionPerformed(ActionEvent e) {
        
@@ -68,6 +66,7 @@ public class ControlIniciarSesion implements ActionListener{
             }
        }    
      }
+     
      private boolean CamposVacios(String l, String c){ 
           if(l.length()==0 || c.length()==0) return true;
           else return false;
@@ -77,8 +76,6 @@ public class ControlIniciarSesion implements ActionListener{
         RestablecerContraseña view = new RestablecerContraseña();
         ControlRestablecerContra control = new ControlRestablecerContra(view);
         sesion.dispose();
-        
-        
-     }
+    }
     
 }

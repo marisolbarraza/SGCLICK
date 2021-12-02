@@ -298,14 +298,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgroundMenu;
     private javax.swing.JButton btn_cerrarSesion;
-    private javax.swing.JButton btn_consultarHistorial;
-    private javax.swing.JButton btn_listarClientes;
-    private javax.swing.JButton btn_nuevoCliente1;
-    private javax.swing.JButton btn_verEmpleados;
-    private javax.swing.JButton btn_verEquipos1;
-    private javax.swing.JButton btn_verProyectos;
-    private javax.swing.JButton btn_verReportes;
-    private javax.swing.JPanel container;
+    public javax.swing.JButton btn_consultarHistorial;
+    public javax.swing.JButton btn_listarClientes;
+    public javax.swing.JButton btn_nuevoCliente1;
+    public javax.swing.JButton btn_verEmpleados;
+    public javax.swing.JButton btn_verEquipos1;
+    public javax.swing.JButton btn_verProyectos;
+    public javax.swing.JButton btn_verReportes;
+    public javax.swing.JPanel container;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;

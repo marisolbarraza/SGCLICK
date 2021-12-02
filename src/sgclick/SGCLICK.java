@@ -26,19 +26,14 @@ public class SGCLICK {
      */
     public static void main(String[] args) {
         
-        InicioSesion view = new InicioSesion();
+       InicioSesion view = new InicioSesion();
         ControlIniciarSesion c = new ControlIniciarSesion(view);
         
-//        Database db = new Database();
-//        
-//        boolean v = db.accederSistema(44444, "Luchocosta02");
-//        System.out.println(v);
+       /*Database db= new Database();
+       
+       db.cambiarContraseña(44539, "hiosdds");*/
 
-// the random string length
-        int i = 15; 
 
-        // output 
-        System.out.println("A random string: " + GeneradorContraseñas.getRandomString(i));
         
         
         
