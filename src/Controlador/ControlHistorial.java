@@ -198,9 +198,7 @@ public class ControlHistorial implements ActionListener {
         actual.txt_descriproy.setText(p.getDescripcion());
         actual.txt_fechaInicio.setText(p.getFechInicio().toString());
         actual.txt_horasempleadas.setText(Double.toString(p.getHorasEmpleadas()));
-       
         actual.cb_nroEquipo.setSelectedItem(p.getEquipo().getId());
-        
         
         DefaultTableModel tablaEquipo = new DefaultTableModel();
         tablaEquipo.addColumn("Apellido y nombre");
