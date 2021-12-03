@@ -1,4 +1,3 @@
-
 package Modelo;
 
 import java.util.Date;
@@ -8,16 +7,16 @@ import java.util.Date;
  * @author Marisol
  */
 public class Proyecto {
+
     private int id;
     private String nombre;
     private String descripcion;
     private Date fechInicio;
     private double horasEmpleadas;
-    private boolean finalizado;
+    private int finalizado;
     private EquipoDesarrollo equipo;
 
-    
-    public Proyecto(int id, String nombre, String descripcion, Date fechInicio, double horasEmpleadas, boolean finalizado, EquipoDesarrollo equipo) {
+    public Proyecto(int id, String nombre, String descripcion, Date fechInicio, double horasEmpleadas, int finalizado, EquipoDesarrollo equipo) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -26,7 +25,7 @@ public class Proyecto {
         this.finalizado = finalizado;
         this.equipo = equipo;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -67,11 +66,11 @@ public class Proyecto {
         this.horasEmpleadas = horasEmpleadas;
     }
 
-    public boolean isFinalizado() {
+    public int isFinalizado() {
         return finalizado;
     }
 
-    public void setFinalizado(boolean finalizado) {
+    public void setFinalizado(int finalizado) {
         this.finalizado = finalizado;
     }
 
@@ -83,10 +82,4 @@ public class Proyecto {
         this.equipo = equipo;
     }
 
-    
-    
-    
-    
-    
-    
 }

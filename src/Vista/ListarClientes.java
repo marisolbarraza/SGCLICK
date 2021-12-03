@@ -28,10 +28,10 @@ public class ListarClientes extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         bgCuit = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_estado = new javax.swing.JLabel();
         txt_busqueda = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        lbl_busqueda = new javax.swing.JLabel();
+        cb_estado = new javax.swing.JComboBox<>();
         btn_darBaja = new javax.swing.JButton();
         btn_nuevocliente = new javax.swing.JButton();
         btn_editarform = new javax.swing.JButton();
@@ -47,9 +47,9 @@ public class ListarClientes extends javax.swing.JPanel {
         bgCuit.setForeground(new java.awt.Color(255, 255, 255));
         bgCuit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jLabel1.setText("Estado");
-        bgCuit.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, -1, -1));
+        lbl_estado.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        lbl_estado.setText("Estado");
+        bgCuit.add(lbl_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, -1, -1));
 
         txt_busqueda.setBorder(null);
         txt_busqueda.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -59,19 +59,20 @@ public class ListarClientes extends javax.swing.JPanel {
         });
         bgCuit.add(txt_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 390, 20));
 
-        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jLabel2.setText("cuit o razon social");
-        bgCuit.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        lbl_busqueda.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        lbl_busqueda.setText("CUIT o Razon social");
+        bgCuit.add(lbl_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        lbl_busqueda.getAccessibleContext().setAccessibleName("CUIT o Razon social");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        bgCuit.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 100, -1));
+        cb_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        bgCuit.add(cb_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 100, -1));
 
         btn_darBaja.setBackground(new java.awt.Color(231, 197, 59));
         btn_darBaja.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         btn_darBaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconBaja.png"))); // NOI18N
         btn_darBaja.setText("Dar de baja");
         btn_darBaja.setBorder(null);
-        bgCuit.add(btn_darBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 120, 40));
+        bgCuit.add(btn_darBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 120, 40));
 
         btn_nuevocliente.setBackground(new java.awt.Color(231, 197, 59));
         btn_nuevocliente.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -83,7 +84,7 @@ public class ListarClientes extends javax.swing.JPanel {
                 btn_nuevoclienteActionPerformed(evt);
             }
         });
-        bgCuit.add(btn_nuevocliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 150, 30));
+        bgCuit.add(btn_nuevocliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 150, 30));
 
         btn_editarform.setBackground(new java.awt.Color(231, 197, 59));
         btn_editarform.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -96,7 +97,7 @@ public class ListarClientes extends javax.swing.JPanel {
                 btn_editarformActionPerformed(evt);
             }
         });
-        bgCuit.add(btn_editarform, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 190, -1));
+        bgCuit.add(btn_editarform, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 190, -1));
 
         jPanel1.add(bgCuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 830, 100));
 
@@ -171,12 +172,12 @@ public class ListarClientes extends javax.swing.JPanel {
     private javax.swing.JButton btn_darBaja;
     private javax.swing.JButton btn_editarform;
     private javax.swing.JButton btn_nuevocliente;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JComboBox<String> cb_estado;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_bienvenida1;
+    private javax.swing.JLabel lbl_busqueda;
+    private javax.swing.JLabel lbl_estado;
     private javax.swing.JLabel lbl_infoUsuario;
     private javax.swing.JTable tabla_clientes;
     private javax.swing.JTextField txt_busqueda;

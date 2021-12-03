@@ -30,8 +30,8 @@ public class HistorialCliente extends javax.swing.JPanel {
         bgCuit = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txt_busqueda = new javax.swing.JTextField();
-        btn_guardartodo = new javax.swing.JButton();
         btn_darBaja = new javax.swing.JButton();
+        btn_buscarcuit = new javax.swing.JButton();
         bg_tituloTab = new javax.swing.JPanel();
         lbl_tituloTab = new javax.swing.JLabel();
         jTabPanel_menu = new javax.swing.JTabbedPane();
@@ -48,20 +48,18 @@ public class HistorialCliente extends javax.swing.JPanel {
         lbl_localidad = new javax.swing.JLabel();
         txt_cuit = new javax.swing.JTextField();
         txt_razonSocial = new javax.swing.JTextField();
-        lbl_codPostal = new javax.swing.JLabel();
         cb_provincia = new javax.swing.JComboBox<>();
         txt_telefono = new javax.swing.JTextField();
         txt_direccion = new javax.swing.JTextField();
         cb_localidad = new javax.swing.JComboBox<>();
-        txt_codPostal = new javax.swing.JTextField();
         lbl_telefono = new javax.swing.JLabel();
         btn_editarform = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
+        btn_guardartodo = new javax.swing.JButton();
         tab_proyectos = new javax.swing.JToolBar();
         bg_tab_proyectos = new javax.swing.JPanel();
         btn_nuevoProy = new javax.swing.JButton();
@@ -135,14 +133,7 @@ public class HistorialCliente extends javax.swing.JPanel {
                 txt_busquedaKeyPressed(evt);
             }
         });
-        bgCuit.add(txt_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 380, 20));
-
-        btn_guardartodo.setBackground(new java.awt.Color(102, 153, 0));
-        btn_guardartodo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btn_guardartodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconGuardar.png"))); // NOI18N
-        btn_guardartodo.setText("Guardar Cambios");
-        btn_guardartodo.setBorder(null);
-        bgCuit.add(btn_guardartodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 150, 40));
+        bgCuit.add(txt_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 300, 20));
 
         btn_darBaja.setBackground(new java.awt.Color(255, 0, 51));
         btn_darBaja.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -150,6 +141,12 @@ public class HistorialCliente extends javax.swing.JPanel {
         btn_darBaja.setText("Dar de baja");
         btn_darBaja.setBorder(null);
         bgCuit.add(btn_darBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 130, 40));
+
+        btn_buscarcuit.setBackground(new java.awt.Color(231, 197, 59));
+        btn_buscarcuit.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btn_buscarcuit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconBuscar.png"))); // NOI18N
+        btn_buscarcuit.setBorder(null);
+        bgCuit.add(btn_buscarcuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
 
         add(bgCuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 830, 60));
 
@@ -223,10 +220,6 @@ public class HistorialCliente extends javax.swing.JPanel {
         txt_razonSocial.setEnabled(false);
         bg_tab_detallesGral.add(txt_razonSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 250, 20));
 
-        lbl_codPostal.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
-        lbl_codPostal.setText("Código Postal");
-        bg_tab_detallesGral.add(lbl_codPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, -1, -1));
-
         cb_provincia.setEditable(true);
         cb_provincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cb_provincia.setBorder(null);
@@ -247,10 +240,6 @@ public class HistorialCliente extends javax.swing.JPanel {
         cb_localidad.setEnabled(false);
         bg_tab_detallesGral.add(cb_localidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 100, -1));
 
-        txt_codPostal.setBorder(null);
-        txt_codPostal.setEnabled(false);
-        bg_tab_detallesGral.add(txt_codPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, 110, 20));
-
         lbl_telefono.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         lbl_telefono.setText("Teléfono");
         bg_tab_detallesGral.add(lbl_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
@@ -266,13 +255,10 @@ public class HistorialCliente extends javax.swing.JPanel {
                 btn_editarformActionPerformed(evt);
             }
         });
-        bg_tab_detallesGral.add(btn_editarform, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 30, 160, -1));
+        bg_tab_detallesGral.add(btn_editarform, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 383, 160, 40));
 
         jSeparator1.setBackground(new java.awt.Color(243, 234, 232));
         bg_tab_detallesGral.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 330, 10));
-
-        jSeparator2.setBackground(new java.awt.Color(243, 234, 232));
-        bg_tab_detallesGral.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 120, 10));
 
         jSeparator4.setBackground(new java.awt.Color(243, 234, 232));
         bg_tab_detallesGral.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 330, 10));
@@ -285,6 +271,13 @@ public class HistorialCliente extends javax.swing.JPanel {
 
         jSeparator6.setBackground(new java.awt.Color(243, 234, 232));
         bg_tab_detallesGral.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 120, 10));
+
+        btn_guardartodo.setBackground(new java.awt.Color(102, 153, 0));
+        btn_guardartodo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btn_guardartodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconGuardar.png"))); // NOI18N
+        btn_guardartodo.setText("Guardar Cambios");
+        btn_guardartodo.setBorder(null);
+        bg_tab_detallesGral.add(btn_guardartodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 160, 40));
 
         tab_detallesGral.add(bg_tab_detallesGral);
 
@@ -591,10 +584,6 @@ public class HistorialCliente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_editarformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarformActionPerformed
-       txt_codPostal.setEnabled(true);
-       txt_direccion.setEnabled(true);
-       txt_mail.setEnabled(true);
-       txt_telefono.setEnabled(true);
        cb_localidad.setEnabled(true);
        cb_pais.setEnabled(true);
        cb_provincia.setEnabled(true);
@@ -630,6 +619,7 @@ public class HistorialCliente extends javax.swing.JPanel {
     public javax.swing.JPanel bg_tab_proyectos;
     public javax.swing.JPanel bg_tituloTab;
     public javax.swing.JButton btn_bajaFactura;
+    public javax.swing.JButton btn_buscarcuit;
     public javax.swing.JButton btn_darBaja;
     public javax.swing.JButton btn_detallesFactura1;
     public javax.swing.JButton btn_detallesProy;
@@ -639,11 +629,11 @@ public class HistorialCliente extends javax.swing.JPanel {
     public javax.swing.JButton btn_guardartodo;
     public javax.swing.JButton btn_nuevaFactura;
     public javax.swing.JButton btn_nuevoProy;
-    private javax.swing.JComboBox<String> cb_estadoproy;
-    private javax.swing.JComboBox<String> cb_localidad;
-    private javax.swing.JComboBox<String> cb_nroEquipo;
-    private javax.swing.JComboBox<String> cb_pais;
-    private javax.swing.JComboBox<String> cb_provincia;
+    public javax.swing.JComboBox<String> cb_estadoproy;
+    public javax.swing.JComboBox<String> cb_localidad;
+    public javax.swing.JComboBox<String> cb_nroEquipo;
+    public javax.swing.JComboBox<String> cb_pais;
+    public javax.swing.JComboBox<String> cb_provincia;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JScrollPane jScrollPane2;
@@ -653,7 +643,6 @@ public class HistorialCliente extends javax.swing.JPanel {
     public javax.swing.JSeparator jSeparator10;
     public javax.swing.JSeparator jSeparator11;
     public javax.swing.JSeparator jSeparator12;
-    public javax.swing.JSeparator jSeparator2;
     public javax.swing.JSeparator jSeparator3;
     public javax.swing.JSeparator jSeparator4;
     public javax.swing.JSeparator jSeparator5;
@@ -663,7 +652,6 @@ public class HistorialCliente extends javax.swing.JPanel {
     public javax.swing.JSeparator jSeparator9;
     public javax.swing.JTabbedPane jTabPanel_menu;
     public javax.swing.JLabel lbl_Provincia;
-    public javax.swing.JLabel lbl_codPostal;
     public javax.swing.JLabel lbl_cuit;
     public javax.swing.JLabel lbl_cuitFactura;
     public javax.swing.JLabel lbl_descripProy;
@@ -696,7 +684,6 @@ public class HistorialCliente extends javax.swing.JPanel {
     public javax.swing.JTable tabla_facturas;
     public javax.swing.JTable table_proyectos;
     public javax.swing.JTextField txt_busqueda;
-    public javax.swing.JTextField txt_codPostal;
     public javax.swing.JTextField txt_cuit;
     public javax.swing.JTextField txt_descriproy;
     public javax.swing.JTextField txt_direccion;

@@ -12,15 +12,17 @@ public class Factura {
     private int nroFactura;
     private Date fechaEmisión;
     private double total;
+    private double horasTotalPagadas;
     private ArrayList<Detalle> detalles;
-    private boolean visible;
+    private int visible;
 
-    public Factura(int nroFactura, Date fechaEmisión, double total, ArrayList<Detalle> detalles, boolean visible) {
+    public Factura(int nroFactura, Date fechaEmisión, double total, ArrayList<Detalle> detalles, int visible) {
         this.nroFactura = nroFactura;
         this.fechaEmisión = fechaEmisión;
         this.detalles=detalles;
+        this.horasTotalPagadas=CalcularHoras(detalles);
         this.total = CalcularTotal(detalles);
-        this.visible = true;
+        this.visible =1;
     }
 
     public int getNroFactura() {
@@ -49,11 +51,11 @@ public class Factura {
 
     
 
-    public boolean isVisible() {
+    public int isVisible() {
         return visible;
     }
 
-    public void setVisible(boolean visible) {
+    public void setVisible(int visible) {
         this.visible = visible;
     }
 
@@ -71,6 +73,22 @@ public class Factura {
             total += detalles.get(i).getSubtotal();
         }
         return total;
+    }
+
+    private double CalcularHoras(ArrayList<Detalle> detalles) {
+        double total = 0.0;
+        for(int i=0; i<detalles.size();i++){
+            total += detalles.get(i).getHorasPagas();
+        }
+        return total;
+    }
+
+    public double getHorasTotalPagadas() {
+        return horasTotalPagadas;
+    }
+
+    public void setHorasTotalPagadas(double horasTotalPagadas) {
+        this.horasTotalPagadas = horasTotalPagadas;
     }
     
     

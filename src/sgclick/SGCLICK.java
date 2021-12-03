@@ -1,15 +1,8 @@
 package sgclick;
 
-import Controlador.ControlIniciarSesion;
-import Modelo.Domicilio;
-import Modelo.Empleado;
-import Modelo.Historial;
-import Modelo.Rol;
-import Modelo.Usuario;
+import Controlador.ControlPrincipal;
+import Modelo.*;
 import Recursos.Database;
-import Recursos.GeneradorContraseñas;
-import Vista.HistorialCliente;
-import Vista.InicioSesion;
 import Vista.VistaPrincipal;
 import java.util.ArrayList;
 
@@ -25,13 +18,19 @@ public class SGCLICK {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Database db= new Database();
+        Usuario u = db.obtenerUsuario(44444);
+//       // System.out.println;
+//       
+//       boolean b =db.validadCuit(203541);
+//       System.out.println(b);
         
-       InicioSesion view = new InicioSesion();
-        ControlIniciarSesion c = new ControlIniciarSesion(view);
+        VistaPrincipal view = new VistaPrincipal();
+        ControlPrincipal c = new ControlPrincipal(view,u);
         
-       Database db= new Database();
+      
        
-       Usuario d = db.seleccionarUsuario(44444);
+       
        
        
 

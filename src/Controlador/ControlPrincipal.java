@@ -6,12 +6,11 @@ package Controlador;
 
 import Modelo.Empleado;
 import Modelo.Usuario;
-import Vista.Bienvenida;
-import Vista.HistorialCliente;
-import Vista.VistaPrincipal;
+import Vista.*;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javafx.scene.paint.Color;
+
 import javax.swing.JPanel;
 import javax.swing.event.AncestorListener;
 
@@ -25,7 +24,7 @@ public class ControlPrincipal implements ActionListener{
     Empleado empleado;
     Usuario usuario;
     ControlBienvenida cb;
-    ControlHistorial ch;
+    
     Bienvenida bienvenida;
     
     public ControlPrincipal(VistaPrincipal v, Usuario usuario) {
@@ -40,14 +39,9 @@ public class ControlPrincipal implements ActionListener{
         this.actual.btn_consultarHistorial.addActionListener(this);
         this.actual.btn_verEmpleados.addActionListener(this);
         this.actual.btn_verEquipos.addActionListener(this);
-        this.actual.btn_verProyectos.addActionListener(this);
         this.actual.btn_verReportes.addActionListener(this);
         
-        
-        
-        
         this.actual.setVisible(true);
-        
     }
    
     
@@ -57,15 +51,43 @@ public class ControlPrincipal implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==this.actual.btn_consultarHistorial) MostrarConsultarHistorial();
+        if (e.getSource()==this.actual.btn_listarClientes) MostrarListarClientes();
+        
+        if(e.getSource()==this.actual.btn_verEmpleados) MostrarListarEmpleados();
+        
             
         
     }
 
     private void MostrarConsultarHistorial() {
-       HistorialCliente hc=new HistorialCliente();
-       ch=new ControlHistorial(this.actual,hc,usuario);
-       
+       HistorialCliente viewhc=new HistorialCliente();
+       ControlHistorial ch=new ControlHistorial(this.actual,viewhc,usuario);
+       actual.btn_consultarHistorial.setBackground(Color.YELLOW);
+       actual.btn_consultarHistorial.setForeground(Color.BLACK);
+       actual.cambiarPanel(viewhc);
     }
+
+    private void MostrarListarClientes() {
+       HistorialCliente view=new HistorialCliente();
+       ControlHistorial ch=new ControlHistorial(this.actual,view,usuario);
+       actual.btn_consultarHistorial.setBackground(Color.YELLOW);
+       actual.btn_consultarHistorial.setForeground(Color.BLACK);
+       actual.cambiarPanel(view);
+    }
+
+    private void MostrarListarEmpleados() {
+       ListarEmpleados view=new ListarEmpleados();
+       ControlListarEmpleados control =new ControlListarEmpleados(this.actual,view,usuario);
+       actual.btn_verEmpleados.setBackground(Color.YELLOW);
+       actual.btn_verEmpleados.setForeground(Color.BLACK);
+       actual.cambiarPanel(view);
+    }
+
+    
+    
+    
+
+    
     
     
     

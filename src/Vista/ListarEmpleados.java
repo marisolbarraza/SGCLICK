@@ -27,13 +27,13 @@ public class ListarEmpleados extends javax.swing.JPanel {
     private void initComponents() {
 
         bgCuit = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_estado = new javax.swing.JLabel();
         txt_busqueda = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        lbl_busqueda = new javax.swing.JLabel();
+        cb_estado = new javax.swing.JComboBox<>();
         btn_darBaja = new javax.swing.JButton();
-        btn_nuevaFactura1 = new javax.swing.JButton();
-        btn_editarform = new javax.swing.JButton();
+        btn_nuevoEmpleado = new javax.swing.JButton();
+        btn_editarEmpleado = new javax.swing.JButton();
         lbl_infoUsuario = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -46,9 +46,9 @@ public class ListarEmpleados extends javax.swing.JPanel {
         bgCuit.setForeground(new java.awt.Color(255, 255, 255));
         bgCuit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jLabel1.setText("Estado");
-        bgCuit.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, -1, -1));
+        lbl_estado.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        lbl_estado.setText("Estado");
+        bgCuit.add(lbl_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, -1, -1));
 
         txt_busqueda.setBorder(null);
         txt_busqueda.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -58,44 +58,44 @@ public class ListarEmpleados extends javax.swing.JPanel {
         });
         bgCuit.add(txt_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 390, 20));
 
-        jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jLabel2.setText("Legajo, Nombre o apellido");
-        bgCuit.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        lbl_busqueda.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        lbl_busqueda.setText("Legajo, Nombre o apellido");
+        bgCuit.add(lbl_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        bgCuit.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 100, -1));
+        cb_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        bgCuit.add(cb_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 100, -1));
 
         btn_darBaja.setBackground(new java.awt.Color(231, 197, 59));
         btn_darBaja.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         btn_darBaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconBaja.png"))); // NOI18N
         btn_darBaja.setText("Dar de baja");
         btn_darBaja.setBorder(null);
-        bgCuit.add(btn_darBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 120, 40));
+        bgCuit.add(btn_darBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 120, -1));
 
-        btn_nuevaFactura1.setBackground(new java.awt.Color(231, 197, 59));
-        btn_nuevaFactura1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        btn_nuevaFactura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconNuevo.png"))); // NOI18N
-        btn_nuevaFactura1.setText("Nuevo empleado");
-        btn_nuevaFactura1.setBorder(null);
-        btn_nuevaFactura1.addActionListener(new java.awt.event.ActionListener() {
+        btn_nuevoEmpleado.setBackground(new java.awt.Color(231, 197, 59));
+        btn_nuevoEmpleado.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        btn_nuevoEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconNuevo.png"))); // NOI18N
+        btn_nuevoEmpleado.setText("Nuevo empleado");
+        btn_nuevoEmpleado.setBorder(null);
+        btn_nuevoEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_nuevaFactura1ActionPerformed(evt);
+                btn_nuevoEmpleadoActionPerformed(evt);
             }
         });
-        bgCuit.add(btn_nuevaFactura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 150, 30));
+        bgCuit.add(btn_nuevoEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 150, 30));
 
-        btn_editarform.setBackground(new java.awt.Color(231, 197, 59));
-        btn_editarform.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btn_editarform.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconEditar.png"))); // NOI18N
-        btn_editarform.setText("Editar datos del empleado");
-        btn_editarform.setBorder(null);
-        btn_editarform.setBorderPainted(false);
-        btn_editarform.addActionListener(new java.awt.event.ActionListener() {
+        btn_editarEmpleado.setBackground(new java.awt.Color(231, 197, 59));
+        btn_editarEmpleado.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        btn_editarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconEditar.png"))); // NOI18N
+        btn_editarEmpleado.setText("Editar datos del empleado");
+        btn_editarEmpleado.setBorder(null);
+        btn_editarEmpleado.setBorderPainted(false);
+        btn_editarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editarformActionPerformed(evt);
+                btn_editarEmpleadoActionPerformed(evt);
             }
         });
-        bgCuit.add(btn_editarform, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 190, -1));
+        bgCuit.add(btn_editarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 190, -1));
 
         add(bgCuit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 830, 100));
 
@@ -134,28 +134,28 @@ public class ListarEmpleados extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_busquedaMouseClicked
 
-    private void btn_nuevaFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevaFactura1ActionPerformed
+    private void btn_nuevoEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nuevoEmpleadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_nuevaFactura1ActionPerformed
+    }//GEN-LAST:event_btn_nuevoEmpleadoActionPerformed
 
-    private void btn_editarformActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarformActionPerformed
+    private void btn_editarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarEmpleadoActionPerformed
        
-    }//GEN-LAST:event_btn_editarformActionPerformed
+    }//GEN-LAST:event_btn_editarEmpleadoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bgBienvenida1;
     private javax.swing.JPanel bgCuit;
-    private javax.swing.JButton btn_darBaja;
-    private javax.swing.JButton btn_editarform;
-    private javax.swing.JButton btn_nuevaFactura1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JButton btn_darBaja;
+    public javax.swing.JButton btn_editarEmpleado;
+    public javax.swing.JButton btn_nuevoEmpleado;
+    public javax.swing.JComboBox<String> cb_estado;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jTable1;
     private javax.swing.JLabel lbl_bienvenida1;
-    private javax.swing.JLabel lbl_infoUsuario;
-    private javax.swing.JTextField txt_busqueda;
+    private javax.swing.JLabel lbl_busqueda;
+    private javax.swing.JLabel lbl_estado;
+    public javax.swing.JLabel lbl_infoUsuario;
+    public javax.swing.JTextField txt_busqueda;
     // End of variables declaration//GEN-END:variables
 }

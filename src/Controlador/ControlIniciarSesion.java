@@ -61,7 +61,7 @@ public class ControlIniciarSesion implements ActionListener{
             if(validar==true){
                 
                 VistaPrincipal vp = new VistaPrincipal();
-                Usuario u = db.seleccionarUsuario(legajo);
+                Usuario u = db.obtenerUsuario(legajo);
                 ControlPrincipal control= new ControlPrincipal(vp,u);
                 sesion.dispose();
             }
