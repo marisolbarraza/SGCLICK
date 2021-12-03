@@ -41,18 +41,15 @@ public class NuevoEmpleado extends javax.swing.JFrame {
         lbl_provincia = new javax.swing.JLabel();
         lbl_telefono = new javax.swing.JLabel();
         lbl_localidad1 = new javax.swing.JLabel();
-        lbl_codPostal1 = new javax.swing.JLabel();
         txt_legajo = new javax.swing.JTextField();
         txt_dni = new javax.swing.JTextField();
         txt_nombres = new javax.swing.JTextField();
-        cb_codpostal = new javax.swing.JTextField();
         txt_telefono = new javax.swing.JTextField();
         txt_apellidos = new javax.swing.JTextField();
         txt_mail = new javax.swing.JTextField();
         txt_rol = new javax.swing.JFormattedTextField();
         txt_fechNac = new javax.swing.JFormattedTextField();
         txt_domicilio = new javax.swing.JTextField();
-        cb_localidad = new javax.swing.JComboBox<>();
         cb_provincia = new javax.swing.JComboBox<>();
         cb_pais = new javax.swing.JComboBox<>();
         lbl_fechIng1 = new javax.swing.JLabel();
@@ -60,6 +57,7 @@ public class NuevoEmpleado extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btn_crearEmpleado = new javax.swing.JButton();
         btn_cancelar = new javax.swing.JButton();
+        cb_localidad = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,10 +116,6 @@ public class NuevoEmpleado extends javax.swing.JFrame {
         lbl_localidad1.setText("Localidad");
         jPanel1.add(lbl_localidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, -1, -1));
 
-        lbl_codPostal1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        lbl_codPostal1.setText("Código postal");
-        jPanel1.add(lbl_codPostal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, -1, -1));
-
         txt_legajo.setBorder(null);
         txt_legajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,9 +129,6 @@ public class NuevoEmpleado extends javax.swing.JFrame {
 
         txt_nombres.setBorder(null);
         jPanel1.add(txt_nombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 200, 20));
-
-        cb_codpostal.setBorder(null);
-        jPanel1.add(cb_codpostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 80, 20));
 
         txt_telefono.setBorder(null);
         jPanel1.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 100, 20));
@@ -161,9 +152,6 @@ public class NuevoEmpleado extends javax.swing.JFrame {
 
         txt_domicilio.setBorder(null);
         jPanel1.add(txt_domicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 320, 20));
-
-        cb_localidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cb_localidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 120, -1));
 
         cb_provincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(cb_provincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 120, -1));
@@ -203,6 +191,10 @@ public class NuevoEmpleado extends javax.swing.JFrame {
         });
         jPanel1.add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 530, 150, 40));
 
+        cb_localidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_localidad.setBorder(null);
+        jPanel1.add(cb_localidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 120, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -228,11 +220,11 @@ public class NuevoEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_rolActionPerformed
 
     private void btn_crearEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearEmpleadoActionPerformed
-        this.dispose();
+       
     }//GEN-LAST:event_btn_crearEmpleadoActionPerformed
 
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
-        this.dispose();
+       
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     /**
@@ -271,38 +263,36 @@ public class NuevoEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_cancelar;
-    private javax.swing.JButton btn_crearEmpleado;
-    private javax.swing.JTextField cb_codpostal;
-    private javax.swing.JComboBox<String> cb_localidad;
-    private javax.swing.JComboBox<String> cb_pais;
-    private javax.swing.JComboBox<String> cb_provincia;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lbl_apellidos;
-    private javax.swing.JLabel lbl_codPostal1;
-    private javax.swing.JLabel lbl_dni;
-    private javax.swing.JLabel lbl_domicilio;
-    private javax.swing.JLabel lbl_fechIng1;
-    private javax.swing.JLabel lbl_fechNac;
-    private javax.swing.JLabel lbl_legajo;
-    private javax.swing.JLabel lbl_localidad1;
-    private javax.swing.JLabel lbl_mail;
-    private javax.swing.JLabel lbl_nombres;
-    private javax.swing.JLabel lbl_pais;
-    private javax.swing.JLabel lbl_provincia;
-    private javax.swing.JLabel lbl_rol;
-    private javax.swing.JLabel lbl_telefono;
-    private javax.swing.JTextField txt_apellidos;
-    private javax.swing.JTextField txt_dni;
-    private javax.swing.JTextField txt_domicilio;
-    private javax.swing.JFormattedTextField txt_fechIng1;
-    private javax.swing.JFormattedTextField txt_fechNac;
-    private javax.swing.JTextField txt_legajo;
-    private javax.swing.JTextField txt_mail;
-    private javax.swing.JTextField txt_nombres;
-    private javax.swing.JFormattedTextField txt_rol;
-    private javax.swing.JTextField txt_telefono;
+    public javax.swing.JButton btn_cancelar;
+    public javax.swing.JButton btn_crearEmpleado;
+    public javax.swing.JComboBox<String> cb_localidad;
+    public javax.swing.JComboBox<String> cb_pais;
+    public javax.swing.JComboBox<String> cb_provincia;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JSeparator jSeparator1;
+    public javax.swing.JLabel lbl_apellidos;
+    public javax.swing.JLabel lbl_dni;
+    public javax.swing.JLabel lbl_domicilio;
+    public javax.swing.JLabel lbl_fechIng1;
+    public javax.swing.JLabel lbl_fechNac;
+    public javax.swing.JLabel lbl_legajo;
+    public javax.swing.JLabel lbl_localidad1;
+    public javax.swing.JLabel lbl_mail;
+    public javax.swing.JLabel lbl_nombres;
+    public javax.swing.JLabel lbl_pais;
+    public javax.swing.JLabel lbl_provincia;
+    public javax.swing.JLabel lbl_rol;
+    public javax.swing.JLabel lbl_telefono;
+    public javax.swing.JTextField txt_apellidos;
+    public javax.swing.JTextField txt_dni;
+    public javax.swing.JTextField txt_domicilio;
+    public javax.swing.JFormattedTextField txt_fechIng1;
+    public javax.swing.JFormattedTextField txt_fechNac;
+    public javax.swing.JTextField txt_legajo;
+    public javax.swing.JTextField txt_mail;
+    public javax.swing.JTextField txt_nombres;
+    public javax.swing.JFormattedTextField txt_rol;
+    public javax.swing.JTextField txt_telefono;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,8 @@
  */
 package Controlador;
 
+import Modelo.Detalle;
+import Modelo.Empleado;
 import Modelo.Factura;
 import Modelo.Historial;
 import Modelo.Proyecto;
@@ -49,16 +51,16 @@ public class ControlHistorial implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== actual.btn_buscarcuit) BuscarHistorial();
-        if(e.getSource()== actual.btn_bajaFactura) DarBajaFactura();
-        if(e.getSource()==actual.btn_darBaja); DarBajaCliente();
+//        if(e.getSource()== actual.btn_bajaFactura) DarBajaFactura();
+//        if(e.getSource()==actual.btn_darBaja); DarBajaCliente();
         if(e.getSource()==actual.btn_detallesFactura1)VerDetallesFactura();
         if(e.getSource()== actual.btn_detallesProy) VerDetallesProyecto();
-        if(e.getSource()==actual.btn_editarProy); EditarProyecto();
-        if(e.getSource()==actual.btn_editarform) DeshabilitarCampos();
-        if(e.getSource()== actual.btn_emitirfac) EmitirFactura();
-        if(e.getSource()==actual.btn_guardartodo) GuardarTodo();
-        if(e.getSource()==actual.btn_nuevaFactura)NuevaFactura();
-        if(e.getSource()== actual.btn_nuevoProy) NuevoProyecto();
+//        if(e.getSource()==actual.btn_editarProy); EditarProyecto();
+//        if(e.getSource()==actual.btn_editarform) DeshabilitarCampos();
+//        if(e.getSource()== actual.btn_emitirfac) EmitirFactura();
+//        if(e.getSource()==actual.btn_guardartodo) GuardarTodo();
+//        if(e.getSource()==actual.btn_nuevaFactura)NuevaFactura();
+//        if(e.getSource()== actual.btn_nuevoProy) NuevoProyecto();
        
     }
     
@@ -111,6 +113,10 @@ public class ControlHistorial implements ActionListener {
         actual.cb_localidad.setSelectedItem(h.getCliente().getDomicilio().getLocalidad());
         actual.cb_provincia.setSelectedItem(h.getCliente().getDomicilio().getProvincia());
         actual.cb_pais.setSelectedItem(h.getCliente().getDomicilio().getPais());
+        actual.lbl_deudatotal1.setText("Deuda total: "+h.getSaldoAdeudado());
+        actual.lbl_deudatotal2.setText("Deuda total: "+h.getSaldoAdeudado());
+        actual.cb_nroEquipo.setSelectedItem(h.getProyectos());
+        
     }
     private void LlenarTablaProyectos(Historial h) {
         DefaultTableModel tablaProyectos = new DefaultTableModel();
@@ -138,7 +144,7 @@ public class ControlHistorial implements ActionListener {
         tablaFactura.addColumn("Fecha de creación");
         tablaFactura.addColumn("Horas total pagadas");
         tablaFactura.addColumn("Total");
-      
+        
         
         for(Factura f: h.getFacturas()){
             Object[]fila={
@@ -159,11 +165,55 @@ public class ControlHistorial implements ActionListener {
     }
 
     private void VerDetallesFactura() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Database db = new Database();
+        int fila = actual.tabla_facturas.getSelectedRow();
+        int columna =actual.tabla_facturas.getSelectedColumn();
+        int valor = Integer.parseInt( actual.tabla_facturas.getValueAt(fila, 0).toString());
+        Factura fac = db.obtenerFactura(valor);
+        actual.lbl_totalFac.setText("Total: " +Double.toString(fac.getTotal()));
+        actual.lbl_nroFac.setText("Factura N°: " +Integer.toString(fac.getNroFactura()));
+        
+        DefaultTableModel tablaDetalle = new DefaultTableModel();
+        tablaDetalle.addColumn("Detalles");
+        tablaDetalle.addColumn("Horas a pagar");
+        tablaDetalle.addColumn("Monto");
+           
+        for(Detalle e:fac.getDetalles()){
+            Object[]f={
+                e.getProyecto().getNombre(),
+                e.getHorasPagas(),
+                e.getSubtotal()
+            }; tablaDetalle.addRow(f);
+            actual.tabla_detalleFac.setModel(tablaDetalle);
+        }
     }
 
     private void VerDetallesProyecto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Database db = new Database();
+        int fila = actual.table_proyectos.getSelectedRow();
+        int columna =actual.table_proyectos.getSelectedColumn();
+        int valor = Integer.parseInt( actual.table_proyectos.getValueAt(fila, 0).toString());
+        Proyecto p = db.obtenerProyecto(valor);
+        actual.txt_nombreProy.setText(p.getNombre());
+        actual.txt_descriproy.setText(p.getDescripcion());
+        actual.txt_fechaInicio.setText(p.getFechInicio().toString());
+        actual.txt_horasempleadas.setText(Double.toString(p.getHorasEmpleadas()));
+       
+        actual.cb_nroEquipo.setSelectedItem(p.getEquipo().getId());
+        
+        
+        DefaultTableModel tablaEquipo = new DefaultTableModel();
+        tablaEquipo.addColumn("Apellido y nombre");
+        tablaEquipo.addColumn("Rol");
+           
+        for(Empleado e: p.getEquipo().getEquipo()){
+            Object[]f={
+                e.getApellido()+" "+e.getNombre(),
+                e.getRol().getDescripcion()
+            }; tablaEquipo.addRow(f);
+            actual.tabla_equipo.setModel(tablaEquipo);
+        }
+        
     }
 
     private void EditarProyecto() {

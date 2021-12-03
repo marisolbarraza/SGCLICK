@@ -134,6 +134,27 @@ public class Database {
         }
         return fac;
     }
+    public Factura obtenerFactura(int id){
+        Factura fac=null;
+        
+        try {
+          Connection c = getConnection();
+          Statement s = c.createStatement();
+          String sql = "SELECT * FROM factura where idFactura= "+id;
+          ResultSet r = s.executeQuery(sql);       
+          
+          while(r.next()){
+              
+              Date fe = new Date(r.getDate("fecha").getTime());
+              ArrayList<Detalle> detalles = obtenerDetalles(r.getInt("idFactura"));
+              fac = new Factura(r.getInt("idFactura"),fe,r.getDouble("total"),detalles,r.getInt("visible"));
+              ;
+          }          
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        return fac;
+    }
     public ArrayList<Detalle> obtenerDetalles(int id){
         ArrayList<Detalle> det= new ArrayList<Detalle>();
         
@@ -156,7 +177,7 @@ public class Database {
         
         
     }
-    private ArrayList<Empleado>ListarEmpleados(){
+    public ArrayList<Empleado>ListarEmpleados(){
         ArrayList<Empleado> empleados= new ArrayList<Empleado>();
         
         try {
@@ -168,7 +189,7 @@ public class Database {
           while(r.next()){
               Domicilio dom = obtenerDomicilio(r.getInt("domicilio_idDomicilio"));
               Rol rol = obtenerRol(r.getInt("Rol_idRol"));
-              Empleado em = obtenerEmpleado(r.getInt("legajo"));
+              Empleado em = obtenerEmpleado(r.getInt("legajoEmpleado"));
               empleados.add(em);
           }          
         } catch(Exception e){
@@ -210,6 +231,7 @@ public class Database {
         }
         return d;
     }
+   
     public Rol obtenerRol(int id){
         Rol d=null;
         try {
@@ -297,7 +319,7 @@ public class Database {
         
         return h;
     }
-    
+   
     public Cliente obtenerCliente(int cuit){
         Cliente cli=null;
         try {
@@ -376,11 +398,103 @@ public class Database {
         return false;
     }
     
+    public int TotalRegistros(String tabla){
+        int n=0; 
+        try {
+         Connection c = getConnection();
+         Statement s = c.createStatement();
+         String sql = "select Count(*) from "+ tabla;
+         ResultSet r = s.executeQuery(sql);
+         
+         while(r.next()){
+            n=r.getInt("Count(*)");
+            
+        } 
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        return n;
+    }     
+    
+    public void CrearDomicilio(Domicilio d){
+        try{
+        int m = TotalRegistros("domicilio")+2;
+        System.out.println("dentro de crear domicilio: "+ m);
+        String sql = "insert into domicilio values ('%1','%2','%3','%4','%5');"
+                .replace("%1",""+m)
+                .replace("%2",d.getDomicilio())
+                .replace("%3",d.getLocalidad())
+                .replace("%4",d.getProvincia())
+                .replace("%5",d.getPais());
+        Connection c =getConnection();
+        c.createStatement().executeUpdate(sql);
+        }catch(Exception e){
+            System.out.println(e);
+        } 
+        
+    }
+    
+    public void CrearRol(Rol r){
+        try{
+        int m = TotalRegistros("rol")+1;
+        System.out.println("dentro de crear rol: "+ m);
+
+        String sql = "insert into rol values ('%1','%2');"
+                .replace("%1",""+m)
+                .replace("%2",r.getDescripcion());
+        Connection c =getConnection();
+        c.createStatement().executeUpdate(sql);
+        }catch(Exception e){
+            System.out.println(e);
+        } 
+        
+    }
+    
+    public void CrearEmpleado(Empleado emp){
+        try{
+        int n = TotalRegistros("rol");
+             int m = TotalRegistros("domicilio");
+        System.out.println("dentro de crear empleado -> dom:"+m);
+        
+        System.out.println("dentro de crear empleado -> rol:"+n);
+        java.util.Date d1 = emp.getFechaIngreso();
+        java.util.Date d2 = emp.getFechaNacimiento();
+
+        java.text.SimpleDateFormat sdf =  new java.text.SimpleDateFormat("yyyy-MM-dd");
+        String fechIng = sdf.format(d1);
+        String fechNac = sdf.format(d2);
+        String sql = "insert into empleado values ('%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11');"
+                .replace("%1",""+emp.getLegajo())
+                .replace("%2",emp.getNombre())
+                .replace("%3",emp.getApellido())
+                .replace("%4",""+emp.getDni())
+                .replace("%5",fechNac)
+                .replace("%6",fechIng)
+                .replace("%7",""+emp.getTelefono())
+                .replace("%8",""+emp.isVisible())
+                .replace("%9",""+n)
+                .replace("%10",""+m)
+                .replace("%11",emp.getMail());
+                
+        Connection c =getConnection();
+        c.createStatement().executeUpdate(sql);
+        }catch(Exception e){
+            System.out.println(e);
+        } 
+        
+    }
+    
+    
+    
+    
+    }
     
     
     
     
     
+
     
+
     
-}
+

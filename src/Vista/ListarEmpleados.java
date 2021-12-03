@@ -36,7 +36,7 @@ public class ListarEmpleados extends javax.swing.JPanel {
         btn_editarEmpleado = new javax.swing.JButton();
         lbl_infoUsuario = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaEmpleados = new javax.swing.JTable();
         bgBienvenida1 = new javax.swing.JPanel();
         lbl_bienvenida1 = new javax.swing.JLabel();
 
@@ -103,7 +103,11 @@ public class ListarEmpleados extends javax.swing.JPanel {
         lbl_infoUsuario.setText("Usuario: Nombre y apellido empleado - Rol: Administrador");
         add(lbl_infoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        tablaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
@@ -114,7 +118,8 @@ public class ListarEmpleados extends javax.swing.JPanel {
                 "Legajo", "DNI", "Nombre y apellido", "Fecha de nacimieto", "Domicilio ", "Telefono", "Localidad", "Provincia", "Pais", "Email"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tablaEmpleados.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        jScrollPane1.setViewportView(tablaEmpleados);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 810, 440));
 
@@ -151,11 +156,11 @@ public class ListarEmpleados extends javax.swing.JPanel {
     public javax.swing.JButton btn_nuevoEmpleado;
     public javax.swing.JComboBox<String> cb_estado;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable1;
     private javax.swing.JLabel lbl_bienvenida1;
     private javax.swing.JLabel lbl_busqueda;
     private javax.swing.JLabel lbl_estado;
     public javax.swing.JLabel lbl_infoUsuario;
+    public javax.swing.JTable tablaEmpleados;
     public javax.swing.JTextField txt_busqueda;
     // End of variables declaration//GEN-END:variables
 }

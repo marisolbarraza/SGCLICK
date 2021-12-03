@@ -19,6 +19,10 @@ public class SGCLICK {
      */
     public static void main(String[] args) {
         Database db= new Database();
+        
+        String m = "rol";
+//        int i = db.TotalRegistros(m);
+//         System.out.println(i);
         Usuario u = db.obtenerUsuario(44444);
 //       // System.out.println;
 //       

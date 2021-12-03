@@ -69,17 +69,12 @@ public class HistorialCliente extends javax.swing.JPanel {
         table_proyectos = new javax.swing.JTable();
         lbl_nombreproy = new javax.swing.JLabel();
         txt_descriproy = new javax.swing.JTextField();
-        lbl_saldoDeuda = new javax.swing.JLabel();
         lbl_horasempleadas = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
-        jSeparator9 = new javax.swing.JSeparator();
         txt_nombreProy = new javax.swing.JTextField();
         txt_horasempleadas = new javax.swing.JTextField();
         jSeparator12 = new javax.swing.JSeparator();
-        txt_saldoadeudado = new javax.swing.JTextField();
-        cb_estadoproy = new javax.swing.JComboBox<>();
         lbl_fechaInicio = new javax.swing.JLabel();
-        lbl_estadoProy = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
         jSeparator10 = new javax.swing.JSeparator();
         lbl_descripProy = new javax.swing.JLabel();
@@ -351,19 +346,12 @@ public class HistorialCliente extends javax.swing.JPanel {
         txt_descriproy.setEnabled(false);
         bg_tab_proyectos.add(txt_descriproy, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 250, 20));
 
-        lbl_saldoDeuda.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
-        lbl_saldoDeuda.setText("Saldo Adeudado");
-        bg_tab_proyectos.add(lbl_saldoDeuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
-
         lbl_horasempleadas.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         lbl_horasempleadas.setText("Horas Empleadas");
         bg_tab_proyectos.add(lbl_horasempleadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
 
         jSeparator7.setBackground(new java.awt.Color(243, 234, 232));
         bg_tab_proyectos.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 120, 10));
-
-        jSeparator9.setBackground(new java.awt.Color(243, 234, 232));
-        bg_tab_proyectos.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 120, 10));
 
         txt_nombreProy.setBorder(null);
         txt_nombreProy.setEnabled(false);
@@ -376,23 +364,9 @@ public class HistorialCliente extends javax.swing.JPanel {
         jSeparator12.setBackground(new java.awt.Color(243, 234, 232));
         bg_tab_proyectos.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 170, 10));
 
-        txt_saldoadeudado.setBorder(null);
-        txt_saldoadeudado.setEnabled(false);
-        bg_tab_proyectos.add(txt_saldoadeudado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 110, 20));
-
-        cb_estadoproy.setEditable(true);
-        cb_estadoproy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cb_estadoproy.setBorder(null);
-        cb_estadoproy.setEnabled(false);
-        bg_tab_proyectos.add(cb_estadoproy, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 100, -1));
-
         lbl_fechaInicio.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         lbl_fechaInicio.setText("Fecha de Inicio");
         bg_tab_proyectos.add(lbl_fechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
-
-        lbl_estadoProy.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
-        lbl_estadoProy.setText("Estado");
-        bg_tab_proyectos.add(lbl_estadoProy, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, -1, -1));
 
         jSeparator11.setBackground(new java.awt.Color(243, 234, 232));
         bg_tab_proyectos.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 140, 10));
@@ -441,7 +415,7 @@ public class HistorialCliente extends javax.swing.JPanel {
         lbl_deudatotal1.setBackground(new java.awt.Color(204, 0, 0));
         lbl_deudatotal1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         lbl_deudatotal1.setText("Deuda total: $valordeuda");
-        bg_tab_proyectos.add(lbl_deudatotal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, -1, -1));
+        bg_tab_proyectos.add(lbl_deudatotal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, -1, -1));
 
         cb_nroEquipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cb_nroEquipo.setBorder(null);
@@ -629,7 +603,6 @@ public class HistorialCliente extends javax.swing.JPanel {
     public javax.swing.JButton btn_guardartodo;
     public javax.swing.JButton btn_nuevaFactura;
     public javax.swing.JButton btn_nuevoProy;
-    public javax.swing.JComboBox<String> cb_estadoproy;
     public javax.swing.JComboBox<String> cb_localidad;
     public javax.swing.JComboBox<String> cb_nroEquipo;
     public javax.swing.JComboBox<String> cb_pais;
@@ -649,7 +622,6 @@ public class HistorialCliente extends javax.swing.JPanel {
     public javax.swing.JSeparator jSeparator6;
     public javax.swing.JSeparator jSeparator7;
     public javax.swing.JSeparator jSeparator8;
-    public javax.swing.JSeparator jSeparator9;
     public javax.swing.JTabbedPane jTabPanel_menu;
     public javax.swing.JLabel lbl_Provincia;
     public javax.swing.JLabel lbl_cuit;
@@ -660,7 +632,6 @@ public class HistorialCliente extends javax.swing.JPanel {
     public javax.swing.JLabel lbl_deudatotal2;
     public javax.swing.JLabel lbl_domicilio;
     public javax.swing.JLabel lbl_email;
-    public javax.swing.JLabel lbl_estadoProy;
     public javax.swing.JLabel lbl_fechaEmision;
     public javax.swing.JLabel lbl_fechaInicio;
     public javax.swing.JLabel lbl_horasempleadas;
@@ -671,7 +642,6 @@ public class HistorialCliente extends javax.swing.JPanel {
     public javax.swing.JLabel lbl_pais;
     public javax.swing.JLabel lbl_razSocial;
     public javax.swing.JLabel lbl_rznSocFac;
-    public javax.swing.JLabel lbl_saldoDeuda;
     public javax.swing.JLabel lbl_saldoDeudaFac;
     public javax.swing.JLabel lbl_telefono;
     public javax.swing.JLabel lbl_tituloTab;
@@ -692,7 +662,6 @@ public class HistorialCliente extends javax.swing.JPanel {
     public javax.swing.JTextField txt_mail;
     public javax.swing.JTextField txt_nombreProy;
     public javax.swing.JTextField txt_razonSocial;
-    public javax.swing.JTextField txt_saldoadeudado;
     public javax.swing.JTextField txt_telefono;
     // End of variables declaration//GEN-END:variables
 }
